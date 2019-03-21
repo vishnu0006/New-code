@@ -1,0 +1,58 @@
+﻿@model Boat
+@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "BoatRegister";
+}
+
+@if (Context.Session.GetString("_LoggedIn") == "true" && Context.Session.GetString("_Posistion") == "Captain")
+{
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6 mx-auto">
+                        <!-- form card login -->
+                        <div class="card rounded-0">
+                            <div class="card-header">
+                                <h3 class="mb-0">Register Boat</h3>
+                            </div>
+                            <div class="card-body">
+
+                                <form class="form" method="post" action="@Url.Action("RegisterBoat", "Boat")">
+                                    Beam: <input class="form-control form-control-lg rounded-0" asp-for="Beam" required/>
+                                    Type: <input class="form-control form-control-lg rounded-0" asp-for="Type" required/>
+                                    Drive System: <input class="form-control form-control-lg rounded-0" asp-for="DriveSystem" required/>
+                                    Hull Height: <input class="form-control form-control-lg rounded-0" asp-for="HullHeight" required/>
+                                    Hull Material: <input class="form-control form-control-lg rounded-0" asp-for="HullMaterial" required/>
+                                    Length: <input class="form-control form-control-lg rounded-0" asp-for="Length" required/>
+                                    Motor Size: <input class="form-control form-control-lg rounded-0" asp-for="MotorSize" required/>
+                                    Propeller Size: <input class="form-control form-control-lg rounded-0" asp-for="PropellerSize" required/>
+                                    Radio: <input class="form-control form-control-lg rounded-0" asp-for="Radio" required/>
+                                    Scale: <input class="form-control form-control-lg rounded-0" asp-for="Scale" required/>
+                                    Speed: <input class="form-control form-control-lg rounded-0" asp-for="Speed" required/>
+                                    Speed Control: <input class="form-control form-control-lg rounded-0" asp-for="SpeedControl" required/>
+                                    Steering: <input class="form-control form-control-lg rounded-0" asp-for="Steering" required/>
+                                    Coluors: <input class="form-control form-control-lg rounded-0" asp-for="Coluors" required/>
+                                    Weight: <input class="form-control form-control-lg rounded-0" asp-for="Weight" required/>
+                                    <button type="submit" class="btn btn-success btn-lg float-right" id="submitAll">Submit</button>
+                                </form>
+                            </div>
+                            <!--/card-block-->
+                        </div>
+                        <!-- /form card login -->
+                    </div>
+                </div>
+                <!--/row-->
+            </div>
+            <!--/col-->
+        </div>
+        <!--/row-->
+    </div>
+    <!--/container-->
+}
+
+@if (Context.Session.GetString("_LoggedIn") == "false" || Context.Session.GetString("_Posistion") != "Captain")
+{
+    <p>Nothing to see here</p>
+}

@@ -1,0 +1,43 @@
+﻿@model ErrorViewModel
+@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Error";
+}
+
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <!-- form card login -->
+                    <div class="card rounded-0">
+                        <div class="card-header">
+                            <h1 class="text-danger">Error.</h1>
+                            <h2 class="text-danger">An error occurred while processing your request.</h2>
+                        </div>
+                        <div class="card-body">
+                            @if (Context.Session.GetString("_ErrorMessage") == "true")
+                            {
+                                <p>An error occured, please email the following to admin@botrace.com so we can fix it. Thank You.</p>
+                                <p>@Context.Session.GetString("_ErrorMessage")</p>
+                                <p>@Context.Session.GetString("_ErrorTrace")</p>
+                                
+                            }
+                            @if (Context.Session.GetString("_Error") == "false")
+                            {
+                                <p>There was no error, please continue as you where.</p>
+                            }
+                        </div>
+                        <!--/card-block-->
+                    </div>
+                    <!-- /form card login -->
+                </div>
+            </div>
+            <!--/row-->
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->

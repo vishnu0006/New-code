@@ -1,0 +1,59 @@
+﻿@model Boat
+@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "BoatRegister";
+    var e = ViewData.Model;
+}
+
+@if (Context.Session.GetString("_LoggedIn") == "true" && Context.Session.GetString("_Posistion") == "Captain")
+{
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-6 mx-auto">
+                        <!-- form card login -->
+                        <div class="card rounded-0">
+                            <div class="card-header">
+                                <h3 class="mb-0">View Boat</h3>
+                            </div>
+                            <div class="card-body">
+
+                                <form class="form" method="post" action="@Url.Action("UpdateBoat", "Boat")">
+                                    ID: <input class="form-control form-control-lg rounded-0" disabled value=@e.Id />
+                                    Beam: <input class="form-control form-control-lg rounded-0" value=@e.Beam asp-for="Beam" />
+                                    Type: <input class="form-control form-control-lg rounded-0" value=@e.Type asp-for="Type" />
+                                    Drive System: <input class="form-control form-control-lg rounded-0" value=@e.DriveSystem asp-for="DriveSystem" />
+                                    Hull Height: <input class="form-control form-control-lg rounded-0" value=@e.HullHeight asp-for="HullHeight" />
+                                    Hull Material: <input class="form-control form-control-lg rounded-0" value=@e.HullMaterial asp-for="HullMaterial" />
+                                    Length: <input class="form-control form-control-lg rounded-0" value=@e.Length asp-for="Length" />
+                                    Motor Size: <input class="form-control form-control-lg rounded-0" value=@e.MotorSize asp-for="MotorSize" />
+                                    Propeller Size: <input class="form-control form-control-lg rounded-0" value=@e.PropellerSize asp-for="PropellerSize" />
+                                    Radio: <input class="form-control form-control-lg rounded-0" value=@e.Radio asp-for="Radio" />
+                                    Scale: <input class="form-control form-control-lg rounded-0" value=@e.Scale asp-for="Scale" />
+                                    Speed: <input class="form-control form-control-lg rounded-0" value=@e.Speed asp-for="Speed" />
+                                    Speed Control: <input class="form-control form-control-lg rounded-0" value=@e.SpeedControl asp-for="SpeedControl" />
+                                    Steering: <input class="form-control form-control-lg rounded-0" value=@e.Steering asp-for="Steering" />
+                                    Coluors: <input class="form-control form-control-lg rounded-0" value=@e.Coluors asp-for="Coluors" />
+                                    Weight: <input class="form-control form-control-lg rounded-0" value=@e.Weight asp-for="Weight" />
+                                    <button type="submit" class="btn btn-success btn-lg float-right" id="submitAll">Update</button>
+                                </form>
+                            </div>
+                            <!--/card-block-->
+                        </div>
+                        <!-- /form card login -->
+                    </div>
+                </div>
+                <!--/row-->
+            </div>
+            <!--/col-->
+        </div>
+        <!--/row-->
+    </div>
+    <!--/container-->
+}
+
+@if (Context.Session.GetString("_LoggedIn") == "false" || Context.Session.GetString("_Posistion") != "Captain")
+{
+    <p>Nothing to see here</p>
+}

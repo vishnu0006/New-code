@@ -1,0 +1,194 @@
+﻿@using Microsoft.AspNetCore.Http
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Boatrace</title>
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap-4.0.0/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css">
+        <link href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.3/jquery-ui.css' rel='stylesheet' />
+        @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.print.css">*@
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link href='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.3/jquery-ui.css' rel='stylesheet' />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    </environment>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light">
+        <a class="navbar-brand" asp-controller="Home" asp-action="Index">BoatRacer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Event" asp-action="All">Event</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Team" asp-action="All">Team</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <li class="nav-item" style="display:inline; padding-right:10px">
+                    @if (Context.Session.GetString("_LoggedIn") == "false")
+                    {
+                        <a class="btn btn-outline-light my-2 my-sm-0" asp-area="" asp-controller="Home" asp-action="Login">Login</a>
+                    }
+
+
+                    @if (Context.Session.GetString("_LoggedIn") == "true")
+                    {
+                        <a class="btn btn-outline-light my-2 my-sm-0" asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
+                    }
+                </li>
+                <li class="nav-item" style="display:inline">
+                    @if (Context.Session.GetString("_LoggedIn") == "false")
+                    {
+                        <a class="btn btn-outline-light my-2 my-sm-0" asp-area="" asp-controller="User" asp-action="Register">Register</a>
+                    }
+
+
+                    @if (Context.Session.GetString("_LoggedIn") == "true")
+                    {
+                        <a class="btn btn-outline-light my-2 my-sm-0" asp-area="" asp-controller="User" asp-action="Profile"> @Context.Session.GetString("_Name")</a>
+                    }
+
+                </li>
+            </form>
+        </div>
+    </nav>
+
+    @*<nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" asp-page="/Index">BoatRodeo</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li ><a asp-page="/Index" class="active">Home <span class="sr-only">(current)</span></a></li>
+                    <li><a asp-page="/About">About</a></li>
+                    <li><a asp-page="/Contact">Contact</a></li>
+                    @*<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>*@
+    @*</ul>
+        <form class="navbar-form navbar-right">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="User Id">
+                <input type="password" class="form-control" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+        </nav>*@
+    <partial name="_CookieConsentPartial" />
+    <div class="body-content">
+        @RenderBody()
+        <footer class="footer-distributed">
+            <div class="footer-left">
+                <h3>Boat<span>Racer</span></h3>
+                <p class="footer-links">
+                    <a asp-controller="Home" asp-action="Index">Home</a>
+                    ·
+                    <a asp-controller="Home" asp-action="Contact">Contact</a>
+                    .
+                    <a asp-controller="Home" asp-action="About">About</a>
+                    ·
+                    <a asp-controller="Home" asp-action="Terms">Terms</a>
+                    ·
+                    <a asp-controller="Home" asp-action="Cookies">Cookies</a>
+                    ·
+                    <a asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </p>
+                <p class="footer-company-name">BoatRacer &copy; 2019</p>
+            </div>
+            <div class="footer-center">
+                <div>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p><span>Priory Street</span> Coventry, UK</p>
+                </div>
+                <div>
+                    <i class="fas fa-phone"></i>
+                    <p>+44 77XXXXXX65</p>
+                </div>
+                <div>
+                    <i class="fas fa-envelope"></i>
+                    <p><a href="mailto:support@company.com">support@boatracer.com</a></p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p class="footer-company-about">
+                    <span>About the company</span>
+                    Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+                </p>
+                <div class="footer-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="https://fullcalendar.io/releases/fullcalendar/3.10.0/lib/moment.min.js"></script>
+        <script src="https://fullcalendar.io/releases/fullcalendar/3.10.0/lib/jquery.min.js"></script>
+        <script src="https://fullcalendar.io/releases/fullcalendar/3.10.0/fullcalendar.min.js"></script>
+        <script src="~/lib/bootstrap-4.0.0/dist/js/bootstrap.js"></script>
+        <script src="~/js/event-calendar.js" asp-append-version="true"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script src="https://fullcalendar.io/releases/fullcalendar/3.10.0/lib/moment.min.js"></script>
+        <script src="https://fullcalendar.io/releases/fullcalendar/3.10.0/lib/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+        <script src="https://fullcalendar.io/releases/fullcalendar/3.10.0/fullcalendar.min.js"></script>
+        <script src="~/js/event-calendar.js" asp-append-version="true"></script>
+    </environment>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

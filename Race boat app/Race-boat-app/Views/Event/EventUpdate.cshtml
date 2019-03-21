@@ -1,0 +1,82 @@
+﻿@model EventIn
+@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Register";
+    var maxDate = DateTime.Today.Year;
+    var maxMonth = DateTime.Today.Month;
+    var maxDay = DateTime.Today.Day + 2;
+    var maxMonthS = "";
+    var maxDayS = "";
+    if (maxMonth < 10)
+    {
+        maxMonthS = "0" + maxMonth.ToString();
+    }
+    else
+    {
+        maxMonthS = maxMonth.ToString();
+    }
+    if (maxDay < 10)
+    {
+        maxDayS = "0" + maxDay.ToString();
+    }
+    if (DateTime.Today.Day == 30 || DateTime.Today.Day == 31)
+    {
+        maxDayS = "02";
+        maxMonth = DateTime.Today.Month + 1;
+        maxMonthS = maxMonth.ToString();
+    }
+    else
+    {
+        maxDayS = maxDay.ToString();
+    }
+}
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <!-- form card login -->
+                    <div class="card rounded-0">
+                        <div class="card-header">
+                            <h3 class="mb-0">Update Event</h3>
+                        </div>
+                        <div class="card-body">
+                            @if (Context.Session.GetString("_Admin") == "true")
+                            {
+
+                                <form class="form" method="post" action="@Url.Action("EventUpdater", "Event")">
+                                    ID: <input class="form-control form-control-lg rounded-0" disabled value=@Context.Session.GetString("_EventID") asp-for="Id" required />
+                                    VideoURL: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_VideoURL") asp-for="VideoURL" required />
+                                    Name: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_EventName") asp-for="Name" required />
+                                    Date: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_Date") type="date" max="2022-01-01" min="@maxDate-@maxMonthS-@maxDayS" asp-for="Date" required />
+                                    Location: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_Location") asp-for="Location" required />
+                                    Time Start: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_TimeStart") asp-for="TimeStart" required />
+                                    Time End: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_TimeEnd") asp-for="TimeEnd" required />
+                                    Description: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_Description") asp-for="Description" required />
+                                    <button type="submit" class="btn btn-success btn-lg float-right" id="submitAll">Submit</button>
+                                </form>
+
+                               <!-- <form method="post" action="@Url.Action("UploadNewFile", "Event")">
+
+                                    <input type="submit" class="btn btn-success btn-sm float-left" value="Upload New File Only" />
+
+                                </form> -->
+
+                            }
+                            @if (Context.Session.GetString("_Admin") == "false")
+                            {
+                                <p>You Don't have permision to access this</p>
+                            }
+                        </div>
+                        <!--/card-block-->
+                    </div>
+                    <!-- /form card login -->
+                </div>
+            </div>
+            <!--/row-->
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>

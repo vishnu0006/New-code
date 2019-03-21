@@ -1,0 +1,75 @@
+﻿@model EventIn
+@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Register";
+    var maxDate = DateTime.Today.Year;
+    var maxMonth = DateTime.Today.Month;
+    var maxDay = DateTime.Today.Day + 2;
+    var maxMonthS = "";
+    var maxDayS = "";
+    if (maxMonth < 10)
+    {
+        maxMonthS = "0" + maxMonth.ToString();
+    }
+    else
+    {
+        maxMonthS = maxMonth.ToString();
+    }
+    if (maxDay < 10)
+    {
+        maxDayS = "0" + maxDay.ToString();
+    }
+    if (DateTime.Today.Day == 30 || DateTime.Today.Day == 31)
+    {
+        maxDayS = "02";
+        maxMonth = DateTime.Today.Month + 1;
+        maxMonthS = maxMonth.ToString();
+    }
+    else
+    {
+        maxDayS = maxDay.ToString();
+    }
+}
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <!-- form card login -->
+                    <div class="card rounded-0">
+                        <div class="card-header">
+                            <h3 class="mb-0">Event Register</h3>
+                        </div>
+                        <div class="card-body">
+                            @if (Context.Session.GetString("_Admin") == "true")
+                            {
+
+                                <form class="form" method="post" action="@Url.Action("EventRegister", "Event")">
+                                    VideoURL: <input class="form-control form-control-lg rounded-0" value="Null" asp-for="VideoURL" required />
+                                    Name: <input class="form-control form-control-lg rounded-0" asp-for="Name" required />
+                                    Date: <input class="form-control form-control-lg rounded-0" type="date" max="2022-01-01" min="@maxDate-@maxMonthS-@maxDayS" asp-for="Date" required />
+                                    Location: <input class="form-control form-control-lg rounded-0" asp-for="Location" required />
+                                    Time Start: <input class="form-control form-control-lg rounded-0" asp-for="TimeStart" required />
+                                    Time End: <input class="form-control form-control-lg rounded-0" asp-for="TimeEnd" required />
+                                    Description: <input class="form-control form-control-lg rounded-0" asp-for="Description" required />
+                                    <button type="submit" class="btn btn-success btn-lg float-right" id="submitAll">Submit</button>
+                                </form>
+
+                            }
+                            @if (Context.Session.GetString("_Admin") == "false")
+                            {
+                                <p>You Don't have permision to access this</p>
+                            }
+                        </div>
+                        <!--/card-block-->
+                    </div>
+                    <!-- /form card login -->
+                </div>
+            </div>
+            <!--/row-->
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>

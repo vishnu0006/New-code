@@ -1,0 +1,138 @@
+C:\dotnet\Race-boat-app\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.deps.json
+C:\dotnet\Race-boat-app\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.runtimeconfig.json
+C:\dotnet\Race-boat-app\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.runtimeconfig.dev.json
+C:\dotnet\Race-boat-app\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.dll
+C:\dotnet\Race-boat-app\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.pdb
+C:\dotnet\Race-boat-app\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.Views.dll
+C:\dotnet\Race-boat-app\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.Views.pdb
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.csprojAssemblyReference.cache
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.csproj.CoreCompileInputs.cache
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.RazorAssemblyInfo.cache
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.RazorAssemblyInfo.cs
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.AssemblyInfoInputs.cache
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.AssemblyInfo.cs
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.TagHelpers.input.cache
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.TagHelpers.output.cache
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.RazorCoreGenerate.cache
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Event\EventRegister.g.cshtml.cs
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Event\Events.g.cshtml.cs
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Event\EventView.g.cshtml.cs
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Team\Teams.g.cshtml.cs
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\User\Register.g.cshtml.cs
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\User\Users.g.cshtml.cs
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.RazorTargetAssemblyInfo.cache
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.RazorTargetAssemblyInfo.cs
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.Views.pdb
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.dll
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.pdb
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.csproj.CopyComplete
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\UserLogin.g.cshtml.cs
+C:\dotnet\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\AdminLogin.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.deps.json
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.runtimeconfig.json
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.runtimeconfig.dev.json
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.dll
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.pdb
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.Views.dll
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.Views.pdb
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.csprojAssemblyReference.cache
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.csproj.CoreCompileInputs.cache
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.RazorAssemblyInfo.cache
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.RazorAssemblyInfo.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.AssemblyInfoInputs.cache
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.AssemblyInfo.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.TagHelpers.input.cache
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.TagHelpers.output.cache
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.RazorCoreGenerate.cache
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Event\EventRegister.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Event\Events.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Event\EventView.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\AdminLogin.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\UserLogin.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Team\Teams.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\User\Register.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\User\Users.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.RazorTargetAssemblyInfo.cache
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.RazorTargetAssemblyInfo.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.Views.pdb
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.dll
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.pdb
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.csproj.CopyComplete
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\User\profile.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Boat\BoatRegister.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Boat\Boat.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Event\upload.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\UserLoginFail.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\AdminLoginError.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Team\TeamView.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Event\EventUpdate.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\About.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\Contact.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\Terms.g.cshtml.cs
+C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\Cookies.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.deps.json
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.runtimeconfig.json
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.runtimeconfig.dev.json
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.dll
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.pdb
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.Views.dll
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\bin\Debug\netcoreapp2.2\Race-boat-app.Views.pdb
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.csprojAssemblyReference.cache
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.RazorAssemblyInfo.cache
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.RazorAssemblyInfo.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.AssemblyInfo.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.TagHelpers.input.cache
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.TagHelpers.output.cache
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.RazorCoreGenerate.cache
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Boat\Boat.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Boat\BoatRegister.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Event\EventRegister.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Event\Events.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Event\EventUpdate.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Event\EventView.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Event\upload.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\About.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\AdminLogin.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\AdminLoginError.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\Contact.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\Cookies.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\Terms.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\UserLogin.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Home\UserLoginFail.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Team\Teams.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\Team\TeamView.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\User\profile.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\User\Register.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\User\Users.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.RazorTargetAssemblyInfo.cache
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.RazorTargetAssemblyInfo.cs
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.Views.pdb
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.dll
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.pdb
+C:\Users\user\Desktop\new boat app\RCBR_Front_End-master\Race-boat-app\obj\Debug\netcoreapp2.2\Race-boat-app.csproj.CopyComplete
