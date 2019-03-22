@@ -205,11 +205,6 @@
     margin: 10px;
 }
 
-.card-horizontal {
-    display: flex;
-    flex: 1 1 auto;
-}
-
 .user-card{
     padding: 0px;
     border: 0px;
@@ -533,11 +528,8 @@
         }
 
 
-/*************common***************/
-.subtitles{
-    font-size: 1rem;
-    font-weight: 500;
-}
+
+
 
 
 

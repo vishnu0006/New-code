@@ -10,17 +10,28 @@ using Microsoft.AspNetCore.Http;
 
 namespace Race_boat_app.Controllers
 {
+    /// <summary>
+    /// Controller for login and miscellaneous aspects of the website 
+    /// </summary>
     public class HomeController : Controller
     {
         static HttpClient client = new HttpClient();
         private static readonly string passPhrase = "l%HJb5N^O@fl0K02H9PsxlR9algJTzK7ARBjJsd3fPG0&GwkrU";
         //private static readonly string passPhrase2 = "yUVyb$shjp4*%S6G!fx5t%i!fTZ@b8KQ#ymQyfhgNQ$#mKB0vA";
 
+        /// <summary>
+        /// Landing page for the website.
+        /// Initialises several session variables. 
+        /// </summary>
+        /// <returns>
+        /// If successful returns the homepage.
+        /// Should anything go wrong it will send the user to the Error page.
+        /// </returns>
         public IActionResult Index()
         {
             try
             {
-
+                HttpContext.Session.SetString("_BoatID", "Empty");
                 if (HttpContext.Session.GetString("_LoggedIn") == "true")
                 {
                     if (HttpContext.Session.GetString("_Admin") == "true")
@@ -58,55 +69,210 @@ namespace Race_boat_app.Controllers
             }
         }
 
+        /// <summary>
+        /// Method handles user request for the About us page
+        /// </summary>
+        /// <returns>
+        /// If successful returns the About Us Page.
+        /// Should anything go wrong it will send the user to the Error page.
+        /// </returns>
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            try
+            { 
+                ViewBag.Message = "Your application description page.";
 
-            return View();
+                return View();
+            }
+            catch (Exception e)
+            {
+                string message = e.Message;
+                string stackTrace = e.StackTrace;
+                HttpContext.Session.SetString("_Error", "true");
+                HttpContext.Session.SetString("_ErrorMessage", message);
+                HttpContext.Session.SetString("_ErrorTrace", stackTrace);
+                return View("Error");
+            }
         }
 
+        /// <summary>
+        /// Method handles user request for the Contact us page
+        /// </summary>
+        /// <returns>
+        /// If successful returns the Contact Us Page.
+        /// Should anything go wrong it will send the user to the Error page.
+        /// </returns>
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            try
+            { 
+                ViewBag.Message = "Your contact page.";
 
-            return View();
+                return View();
+            }
+            catch (Exception e)
+            {
+                string message = e.Message;
+                string stackTrace = e.StackTrace;
+                HttpContext.Session.SetString("_Error", "true");
+                HttpContext.Session.SetString("_ErrorMessage", message);
+                HttpContext.Session.SetString("_ErrorTrace", stackTrace);
+                return View("Error");
+            }
         }
 
+        /// <summary>
+        /// Method handles user request for the Privacy Policy page
+        /// </summary>
+        /// <returns>
+        /// If successful returns the Privacy Policy Page.
+        /// Should anything go wrong it will send the user to the Error page.
+        /// </returns>
         public ActionResult Privacy()
         {
-            ViewBag.Message = "Your privacy page.";
+            try
+            {
+                ViewBag.Message = "Your privacy page.";
 
-            return View();
+                return View();
+            }
+            catch (Exception e)
+            {
+                string message = e.Message;
+                string stackTrace = e.StackTrace;
+                HttpContext.Session.SetString("_Error", "true");
+                HttpContext.Session.SetString("_ErrorMessage", message);
+                HttpContext.Session.SetString("_ErrorTrace", stackTrace);
+                return View("Error");
+            }
         }
 
+        /// <summary>
+        /// Method handles user request for the Cookies page
+        /// </summary>
+        /// <returns>
+        /// If successful returns the Cookies Page.
+        /// Should anything go wrong it will send the user to the Error page.
+        /// </returns>
         public ActionResult Cookies()
         {
-            ViewBag.Message = "Your cookie page.";
+            try
+            { 
+                ViewBag.Message = "Your cookie page.";
 
-            return View();
+                return View();
+            }
+            catch (Exception e)
+            {
+                string message = e.Message;
+                string stackTrace = e.StackTrace;
+                HttpContext.Session.SetString("_Error", "true");
+                HttpContext.Session.SetString("_ErrorMessage", message);
+                HttpContext.Session.SetString("_ErrorTrace", stackTrace);
+                return View("Error");
+            }
         }
 
+        /// <summary>
+        /// Method handles user request for the Terms and Conditions page
+        /// </summary>
+        /// <returns>
+        /// If successful returns the Terms and Conidtions Page.
+        /// Should anything go wrong it will send the user to the Error page.
+        /// </returns>
         public ActionResult Terms()
         {
-            ViewBag.Message = "Your Terms page.";
+            try
+            { 
+                ViewBag.Message = "Your Terms page.";
 
-            return View();
+                return View();
+            }
+            catch (Exception e)
+            {
+                string message = e.Message;
+                string stackTrace = e.StackTrace;
+                HttpContext.Session.SetString("_Error", "true");
+                HttpContext.Session.SetString("_ErrorMessage", message);
+                HttpContext.Session.SetString("_ErrorTrace", stackTrace);
+                return View("Error");
+            }
         }
 
+        /// <summary>
+        /// Method handles user request to access the login page
+        /// </summary>
+        /// <returns>
+        /// If the user is logged in it redirects them to the home page.
+        /// Otherwise it returns the login page. 
+        /// Should anything go wrong it will send the user to the Error page.
+        /// </returns>
         public IActionResult Login()
         {
-            return View("UserLogin");
+            try
+            {
+                HttpContext.Session.SetString("_BoatID", "Empty");
+                if (HttpContext.Session.GetString("_LoggedIn") == "true")
+                {
+                    return RedirectToAction("Index");
+                }
+                return View("UserLogin");
+            }
+            catch (Exception e)
+            {
+                string message = e.Message;
+                string stackTrace = e.StackTrace;
+                HttpContext.Session.SetString("_Error", "true");
+                HttpContext.Session.SetString("_ErrorMessage", message);
+                HttpContext.Session.SetString("_ErrorTrace", stackTrace);
+                return View("Error");
+            }
         }
 
+        /// <summary>
+        /// Method handles admin request to access the admin login page
+        /// </summary>
+        /// <returns>
+        /// If the admin is logged in it redirects them to the home page.
+        /// Otherwise it returns the admin login page.
+        /// Should anything go wrong it will send the user to the Error page.
+        /// </returns>
         public IActionResult AdminLogin()
         {
-            return View("AdminLogin");
+            try
+            {
+                HttpContext.Session.SetString("_BoatID", "Empty");
+                if (HttpContext.Session.GetString("_Admin") == "true")
+                {
+                    return RedirectToAction("Index");
+                }
+                return View("AdminLogin");
+            }
+            catch (Exception e)
+            {
+                string message = e.Message;
+                string stackTrace = e.StackTrace;
+                HttpContext.Session.SetString("_Error", "true");
+                HttpContext.Session.SetString("_ErrorMessage", message);
+                HttpContext.Session.SetString("_ErrorTrace", stackTrace);
+                return View("Error");
+            }
         }
 
+        /// <summary>
+        /// Method handles users' request to log out by setting several,
+        /// including loggedIn, to either false or empy.
+        /// </summary>
+        /// <returns>
+        /// Once the action is completed it redirects the user
+        /// to the home page. 
+        /// Should anything go wrong it will send the user to the Error page.
+        /// </returns>
         public IActionResult Logout()
         {
             try
             {
+                HttpContext.Session.SetString("_HasBoat", "Empty");
                 HttpContext.Session.SetString("_BoatID", "Empty");
                 HttpContext.Session.SetString("_LoggedIn", "false");
                 HttpContext.Session.SetString("_Name", "Empty");
@@ -124,7 +290,8 @@ namespace Race_boat_app.Controllers
                 HttpContext.Session.SetString("_PhoneNumber", "Empty");
                 HttpContext.Session.SetString("_MobileNumber", "Empty");
                 HttpContext.Session.SetString("_Posistion", "Empty");
-                return View("Index");
+                return RedirectToAction("Index");
+                //return View("Index");
             }
             catch (Exception e)
             {
@@ -137,11 +304,43 @@ namespace Race_boat_app.Controllers
             }
         }
 
+        /// <summary>
+        /// Method handles admins' request to log out by setting several,
+        /// including loggedIn, to either false or empy.
+        /// </summary>
+        /// <returns>
+        /// Once the action is completed it redirects the user
+        /// to the home page. 
+        /// Should anything go wrong it will send the user to the Error page.
+        /// </returns>
         public IActionResult AdminLogout() {
-            HttpContext.Session.SetString("_Admin", "false");
-            return View("Index");
+            try
+            { 
+                HttpContext.Session.SetString("_Admin", "false");
+                return RedirectToAction("Index");
+            }
+            catch (Exception e)
+            {
+                string message = e.Message;
+                string stackTrace = e.StackTrace;
+                HttpContext.Session.SetString("_Error", "true");
+                HttpContext.Session.SetString("_ErrorMessage", message);
+                HttpContext.Session.SetString("_ErrorTrace", stackTrace);
+                return View("Error");
+            }
         }
 
+        /// <summary>
+        /// Method handles logging in a user.
+        /// </summary>
+        /// <param name="login">
+        /// An object that contains the user's login information.
+        /// </param>
+        /// <returns>
+        /// Once the action is completed it redirects the user
+        /// to the home page. 
+        /// Should anything go wrong it will send the user to the Error page.
+        /// </returns>
         [HttpPost]
         public async Task<ActionResult> LoginUser(Login login)
         {
@@ -195,7 +394,7 @@ namespace Race_boat_app.Controllers
                 HttpContext.Session.SetString("_MobileNumber", mobileNumber);
                 HttpContext.Session.SetString("_Posistion", posistion);
                 HttpContext.Session.SetString("_Password", password);
-                return View("Index");
+                return RedirectToAction("Index");
                 //OutLogin temp = response.Content.ReadAsAsync<OutLogin>();
             }
             catch (Exception e)
@@ -210,7 +409,15 @@ namespace Race_boat_app.Controllers
 
         }
 
-        
+        /// <summary>
+        /// Handels communicating with the API to get a specific User.
+        /// </summary>
+        /// <param name="path">
+        /// The location of the user that should be retrieved.
+        /// </param>
+        /// <returns>
+        /// Returns the user that was retrieved from the API.
+        /// </returns>
         static async Task<User> GetUserAsync(string path)
         {
             User user = null;
@@ -222,7 +429,17 @@ namespace Race_boat_app.Controllers
             return user;
         }
 
-
+        /// <summary>
+        /// Method handles logging in a admin.
+        /// </summary>
+        /// <param name="login">
+        /// An object that contains the admin's login information.
+        /// </param>
+        /// <returns>
+        /// Once the action is completed it redirects the user
+        /// to the home page. 
+        /// Should anything go wrong it will send the user to the Error page.
+        /// </returns>
         [HttpPost]
         public async Task<ActionResult> AdminLogin(Login login)
         {
@@ -252,7 +469,7 @@ namespace Race_boat_app.Controllers
                     Id = id
                 };
                 HttpContext.Session.SetString("_Admin", "true");
-                return View("Index");
+                return RedirectToAction("Index");
             }
             catch (Exception e)
             {
@@ -267,7 +484,15 @@ namespace Race_boat_app.Controllers
 
         }
 
-
+        /// <summary>
+        /// Handels communicating with the API to get a specific Admin.
+        /// </summary>
+        /// <param name="path">
+        /// The location of the Admin that should be retrieved.
+        /// </param>
+        /// <returns>
+        /// Returns the Admin that was retrieved from the API.
+        /// </returns>
         static async Task<Admin> GetAdminAsync(string path)
         {
             Admin admin = null;
@@ -279,7 +504,10 @@ namespace Race_boat_app.Controllers
             return admin;
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

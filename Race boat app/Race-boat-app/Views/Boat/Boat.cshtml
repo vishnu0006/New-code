@@ -20,22 +20,52 @@
                             <div class="card-body">
 
                                 <form class="form" method="post" action="@Url.Action("UpdateBoat", "Boat")">
-                                    ID: <input class="form-control form-control-lg rounded-0" disabled value=@e.Id />
-                                    Beam: <input class="form-control form-control-lg rounded-0" value=@e.Beam asp-for="Beam" />
-                                    Type: <input class="form-control form-control-lg rounded-0" value=@e.Type asp-for="Type" />
-                                    Drive System: <input class="form-control form-control-lg rounded-0" value=@e.DriveSystem asp-for="DriveSystem" />
-                                    Hull Height: <input class="form-control form-control-lg rounded-0" value=@e.HullHeight asp-for="HullHeight" />
-                                    Hull Material: <input class="form-control form-control-lg rounded-0" value=@e.HullMaterial asp-for="HullMaterial" />
-                                    Length: <input class="form-control form-control-lg rounded-0" value=@e.Length asp-for="Length" />
-                                    Motor Size: <input class="form-control form-control-lg rounded-0" value=@e.MotorSize asp-for="MotorSize" />
-                                    Propeller Size: <input class="form-control form-control-lg rounded-0" value=@e.PropellerSize asp-for="PropellerSize" />
-                                    Radio: <input class="form-control form-control-lg rounded-0" value=@e.Radio asp-for="Radio" />
-                                    Scale: <input class="form-control form-control-lg rounded-0" value=@e.Scale asp-for="Scale" />
-                                    Speed: <input class="form-control form-control-lg rounded-0" value=@e.Speed asp-for="Speed" />
+                                    ID: <input class="form-control form-control-lg rounded-0" disabled value=@e.Id required/>
+                                    Beam: <input class="form-control form-control-lg rounded-0" type="number" value=@e.Beam asp-for="Beam" required/>
+                                    Beam Measurement: <select class="form-control form-control-lg rounded-0" asp-for="BeamM" required >
+                                        <option value=@e.BeamM selected disabled hidden>@e.BeamM</option>
+                                        <option value="in">in</option>
+                                        <option value="cm">cm</option>
+                                    </select>
+                                    Type: <input class="form-control form-control-lg rounded-0" value=@e.Type asp-for="Type" required/>
+                                    Drive System: <input class="form-control form-control-lg rounded-0" value=@e.DriveSystem asp-for="DriveSystem" required/>
+                                    Hull Height: <input class="form-control form-control-lg rounded-0" type="number" value=@e.HullHeight asp-for="HullHeight" required/>
+                                    Hull Height Measurement: <select class="form-control form-control-lg rounded-0" asp-for="HullHeightM" required >
+                                        <option value=@e.HullHeightM selected disabled hidden>@e.HullHeightM</option>
+                                        <option value="in">in</option>
+                                        <option value="cm">cm</option>
+                                    </select>
+                                    Hull Material: <input class="form-control form-control-lg rounded-0" value=@e.HullMaterial asp-for="HullMaterial" required/>
+                                    Length: <input class="form-control form-control-lg rounded-0" type="number" value=@e.Length asp-for="Length" required/>
+                                    Length Measurement: <select class="form-control form-control-lg rounded-0" asp-for="LengthM" required >
+                                        <option value=@e.LengthM selected disabled hidden>@e.LengthM</option>
+                                        <option value="in">in</option>
+                                        <option value="cm">cm</option>
+                                    </select>
+                                    Motor Size: <input class="form-control form-control-lg rounded-0" value=@e.MotorSize asp-for="MotorSize" required/>
+                                    Propeller Size: <input class="form-control form-control-lg rounded-0" value=@e.PropellerSize asp-for="PropellerSize" required/>
+                                    Radio: <input class="form-control form-control-lg rounded-0" value=@e.Radio asp-for="Radio" required/>
+                                    Scale: <input class="form-control form-control-lg rounded-0" type="number" value=@e.Scale asp-for="Scale" required/>
+                                    Scale Measurement: <select class="form-control form-control-lg rounded-0" asp-for="ScaleM" required >
+                                        <option value=@e.ScaleM selected disabled hidden>@e.ScaleM</option>
+                                        <option value="in">in</option>
+                                        <option value="cm">cm</option>
+                                    </select>
+                                    Speed: <input class="form-control form-control-lg rounded-0" type="number" value=@e.Speed asp-for="Speed" required/>
+                                    Speed Measurement: <select class="form-control form-control-lg rounded-0" asp-for="SpeedM" required >
+                                        <option value=@e.SpeedM selected disabled hidden>@e.SpeedM</option>
+                                        <option value="mph">mph</option>
+                                        <option value="kph">kph</option>
+                                    </select>
                                     Speed Control: <input class="form-control form-control-lg rounded-0" value=@e.SpeedControl asp-for="SpeedControl" />
                                     Steering: <input class="form-control form-control-lg rounded-0" value=@e.Steering asp-for="Steering" />
                                     Coluors: <input class="form-control form-control-lg rounded-0" value=@e.Coluors asp-for="Coluors" />
-                                    Weight: <input class="form-control form-control-lg rounded-0" value=@e.Weight asp-for="Weight" />
+                                    Weight: <input class="form-control form-control-lg rounded-0" type="number" value=@e.Weight asp-for="Weight" />
+                                    Weight Measurement: <select class="form-control form-control-lg rounded-0" asp-for="WeightM" required >
+                                        <option value=@e.WeightM selected disabled hidden>@e.WeightM</option>
+                                        <option value="lb">lb</option>
+                                        <option value="kg">kg</option>
+                                    </select>
                                     <button type="submit" class="btn btn-success btn-lg float-right" id="submitAll">Update</button>
                                 </form>
                             </div>

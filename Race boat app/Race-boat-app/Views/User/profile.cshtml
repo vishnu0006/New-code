@@ -47,16 +47,15 @@
     Position: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_Posistion") asp-for="Posistion" required />-->
                                     Dob: <input class="form-control form-control-lg rounded-0" type="date" value=@Context.Session.GetString("_DOB") min="1910-01-01" max="@maxDate-@maxMonthS-@maxDayS" asp-for="DOB" required />
                                     Position:
-                                    @if (Context.Session.GetString("_Team") == "null")
-                                    {
-                                        <select class="form-control form-control-lg rounded-0" asp-for="Posistion" required>
+
+                                        <select class="form-control form-control-lg rounded-0" asp-for="Posistion" required disabled>
                                             <option value=@Context.Session.GetString("_Posistion") selected disabled hidden>@Context.Session.GetString("_Posistion")</option>
                                             <option value="Observer">Observer</option>
                                             <option value="Pit">Pit</option>
                                             <option value="Captain">Captain</option>
                                         </select>
-                                    }
-                                    @if (Context.Session.GetString("_Team") != "null")
+                                    
+                                    <!--@if (Context.Session.GetString("_Team") != "null")
                                     {
                                         <select class="form-control form-control-lg rounded-0" asp-for="Posistion" required disabled>
                                             <option value=@Context.Session.GetString("_Posistion") selected disabled hidden>@Context.Session.GetString("_Posistion")</option>
@@ -64,7 +63,7 @@
                                             <option value="Pit">Pit</option>
                                             <option value="Captain">Captain</option>
                                         </select>
-                                    }
+                                    }-->
                                     Address: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_Address") asp-for="Address" required />
                                     Postcode: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_PostCode") asp-for="PostCode" required />
                                     City: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_City") asp-for="City" required />
@@ -77,7 +76,7 @@
                                 </form>
                                 @if (@Context.Session.GetString("_Posistion") == "Captain")
                                 {
-                                    <form action="@Url.Action("ViewBoat", "Boat")">
+                                    <form action="@Url.Action("Register", "Boat")">
                                         <button type="submit" class="btn btn-success btn-lg float-left">View Boat</button>
                                     </form>
                                 }
@@ -114,11 +113,3 @@
 {
     <p>Nothing to see here</p>
 }
-
-    
-
-
-
-
-
-    

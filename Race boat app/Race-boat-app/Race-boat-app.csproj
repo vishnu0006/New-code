@@ -6,6 +6,10 @@
     <RootNamespace>Race_boat_app</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Users\patri\Downloads\Full_racing_code-master\Race-boat-app\Race-boat-app\Race-boat-app.xml</DocumentationFile>
+  </PropertyGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.7" />

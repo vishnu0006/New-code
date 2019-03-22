@@ -1,0 +1,755 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Race-boat-app</name>
+    </assembly>
+    <members>
+        <member name="T:Race_boat_app.Controllers.BoatController">
+            <summary>
+            The BoatController class handels user interaction with boat data,
+            either adding, getting, or putting the data.
+            </summary>
+        </member>
+        <member name="M:Race_boat_app.Controllers.BoatController.Register">
+            <summary>
+            When the user makes the request to add a boat this is called.
+            </summary>
+            <returns>
+            This function returns the regerstration page for a boat
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.BoatController.ViewBoat">
+            <summary>
+            When the user whishes to view the boat that is assoicated with their account they
+            will make a request to this function.
+            </summary>
+            <returns>
+            It will return one of there things, if their is a boat associated with the user
+            then it will return the boat page which displays the users boat information.
+            If there is no boat associated with the user the boat will redirect them to the 
+            register page.
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.BoatController.RegisterBoat(Race_boat_app.Models.Boat)">
+            <summary>
+            This function handels the registration of the boat for the user.
+            </summary>
+            <param name="boat">
+            Boat is the boat that is object containing the information about the boat
+            the user is trying to add 
+            </param>
+            <returns>
+            Redirects the user to the boat page which will display their boats information
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.BoatController.UpdateBoat(Race_boat_app.Models.Boat)">
+            <summary>
+            This function handels updating the user's boat's information. 
+            </summary>
+            <param name="boat">
+            An object containg the updated information the user wants to replace
+            their current boat with
+            </param>
+            <returns>
+            Redirects to action view boat to display the updated boat information
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.BoatController.CreateBoatAsync(Race_boat_app.Models.Boat)">
+            <summary>
+            Handels communicating with the API to create a Boat.
+            </summary>
+            <param name="boat">
+            An object containing the information to be passed to the API.
+            </param>
+            <returns>
+            Returns the location in the API of the newly created boat. 
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.BoatController.GetBoatAsync(System.String)">
+            <summary>
+            Handels communicating with the API to get a specific Boat.
+            </summary>
+            <param name="path">
+            The location of the boat that should be retrieved.
+            </param>
+            <returns>
+            Returns the boat that was retrieved from the API.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.BoatController.GetBoatsAsync(System.String)">
+            <summary>
+            Handels communicating with the API to retrieve all boats currently stored in the database
+            </summary>
+            <param name="path">
+            The location of the boats that should be retrieved
+            </param>
+            <returns>
+            Returns all the boat that was retrieved from the API
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.BoatController.UpdateBoatAsync(Race_boat_app.Models.Boat)">
+            <summary>
+            Handels communicating with the API to update the information of 
+            a specific boat
+            </summary>
+            <param name="boat">
+            An object containing the information to be passed to the API
+            </param>
+            <returns>
+            Will return the status code of the APIs response, should be 420 No Content  
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.BoatController.DeleteBoatAsync(System.String)">
+            <summary>
+            Handels communicating with the API to delete a specific boat
+            </summary>
+            <param name="id">
+            The ID of the boat that is to be deleted
+            </param>
+            <returns>
+            Will return the status code of the APIs response, should be 420 No Content  
+            </returns>
+        </member>
+        <member name="T:Race_boat_app.Controllers.EventController">
+            <summary>
+            This controller handels communicating user requests with API responses
+            in regards to the Events and Registering intrests in competing in an
+            Event.
+            </summary>
+        </member>
+        <member name="M:Race_boat_app.Controllers.EventController.All">
+            <summary>
+            Gets all events the API has to be displayed on the websites calander. 
+            </summary>
+            <returns>
+            Returns the view events which displays all the events currently taking place.
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.EventController.RegisterEvent">
+            <summary>
+            Handels the Admins request to register an event with the API. 
+            </summary>
+            <returns>
+            Returns the view where the admin can register the event with the API.
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.EventController.RegisterTeam(Race_boat_app.Models.Download)">
+            <summary>
+            Handels registering a teams intrest in competing in an Event. 
+            </summary>
+            <param name="download">
+            Contains the TeamID and EventID that is required to register for the event.
+            </param>
+            <returns>
+            If successful it will redirect the user to the All action 
+            which returns the event calendar
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.EventController.EventRegister(Race_boat_app.Models.EventIn)">
+            <summary>
+            This function is the first part of two that allows for the creation
+            of an Event by the Admin
+            </summary>
+            <param name="events"></param>
+            <returns>
+            Returns the view update which will handle file uploading.
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.EventController.EditEvent(Race_boat_app.Models.Download)">
+            <summary>
+            This function will handle gathering the information 
+            needed to display an events information to an administrator 
+            so that the event can be updated
+            </summary>
+            <param name="download">
+            This object will contain the ID of the event that needs
+            to be updated.
+            </param>
+            <returns>
+            If successful it will return the event update view where an Admin 
+            can edit an events information.
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.EventController.EventUpdater(Race_boat_app.Models.EventIn)">
+            <summary>
+            Handels updating an Event
+            </summary>
+            <param name="events">
+            An object containing an events updated information.
+            </param>
+            <returns>
+            If successful it will redirect the user to the All action 
+            which returns the event calendar
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.EventController.Upload">
+            <summary>
+            Handels uploading a file to the API for storage and 
+            creating an event to be sent to the API
+            </summary>
+            <returns>
+            If successful it will redirect the user to the All action 
+            which returns the event calendar
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.EventController.CreateEventAsync(Race_boat_app.Models.EventIn)">
+            <summary>
+            Handels communicating with the API to create an Event.
+            </summary>
+            <param name="eventIn">
+            An object containing the information to be passed to the API.
+            </param>
+            <returns>
+            Returns the location in the API of the newly created Event. 
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.EventController.AllEvents">
+            <summary>
+            Handels communicating with the API to retrieve all events currently stored in the database
+            </summary>
+            <returns>
+            Returns all the events that was retrieved from the API
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.EventController.GetEventsAsync(System.String)">
+            <summary>
+            Handels communicating with the API to retrieve all events currently stored in the database
+            </summary>
+            <param name="path">
+            The location of the boats that should be retrieved
+            </param>
+            <returns>
+            Returns all the events that was retrieved from the API
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.EventController.GetEventAsync(System.String)">
+            <summary>
+            Handels communicating with the API to get a specific Event
+            </summary>
+            <param name="path">
+            The location of the boat that should be retrieved.
+            </param>
+            <returns>
+            Returns the Event that was retrieved from the API.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.EventController.Download(Race_boat_app.Models.Download)">
+            <summary>
+            This handels the user equest to download a flyer containing 
+            information about an event
+            </summary>
+            <param name="download">
+            An object that contains the event id that will be used to 
+            locate the correct flyer on the API
+            </param>
+            <returns>
+            Returns the file to the user as a download.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.EventController.UpdateEventAsync(Race_boat_app.Models.EventIn)">
+            <summary>
+            Handels communicating with the API to update the information of 
+            a specific event
+            </summary>
+            <param name="eventIn">
+            An object containing the information to be passed to the API
+            </param>
+            <returns>
+            Will return the status code of the APIs response, should be 420 No Content  
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.EventController.CreateEventRegAsync(Race_boat_app.Models.EventReg)">
+            <summary>
+            Handels communicating with the API to create an EventReg.
+            </summary>
+            <param name="eventReg">
+            An object containing the information to be passed to the API.
+            </param>
+            <returns>
+            Returns the location in the API of the newly created EventReg. 
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.EventController.GetEventRegAsync(System.String)">
+            <summary>
+            Handels communicating with the API to get a specific EventReg.
+            </summary>
+            <param name="path">
+            The location of the boat that should be retrieved.
+            </param>
+            <returns>
+            Returns the EventReg that was retrieved from the API.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.EventController.GetEventRegsAsync(System.String)">
+            <summary>
+            Handels communicating with the API to retrieve all EventRegs currently stored in the database
+            </summary>
+            <param name="path">
+            The location of the boats that should be retrieved
+            </param>
+            <returns>
+            Returns all the EventRegs that was retrieved from the API
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.EventController.Error">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Race_boat_app.Controllers.HomeController">
+            <summary>
+            Controller for login and miscellaneous aspects of the website 
+            </summary>
+        </member>
+        <member name="M:Race_boat_app.Controllers.HomeController.Index">
+            <summary>
+            Landing page for the website.
+            Initialises several session variables. 
+            </summary>
+            <returns>
+            If successful returns the homepage.
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.HomeController.About">
+            <summary>
+            Method handles user request for the About us page
+            </summary>
+            <returns>
+            If successful returns the About Us Page.
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.HomeController.Contact">
+            <summary>
+            Method handles user request for the Contact us page
+            </summary>
+            <returns>
+            If successful returns the Contact Us Page.
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.HomeController.Privacy">
+            <summary>
+            Method handles user request for the Privacy Policy page
+            </summary>
+            <returns>
+            If successful returns the Privacy Policy Page.
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.HomeController.Cookies">
+            <summary>
+            Method handles user request for the Cookies page
+            </summary>
+            <returns>
+            If successful returns the Cookies Page.
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.HomeController.Terms">
+            <summary>
+            Method handles user request for the Terms and Conditions page
+            </summary>
+            <returns>
+            If successful returns the Terms and Conidtions Page.
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.HomeController.Login">
+            <summary>
+            Method handles user request to access the login page
+            </summary>
+            <returns>
+            If the user is logged in it redirects them to the home page.
+            Otherwise it returns the login page. 
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.HomeController.AdminLogin">
+            <summary>
+            Method handles admin request to access the admin login page
+            </summary>
+            <returns>
+            If the admin is logged in it redirects them to the home page.
+            Otherwise it returns the admin login page.
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.HomeController.Logout">
+            <summary>
+            Method handles users' request to log out by setting several,
+            including loggedIn, to either false or empy.
+            </summary>
+            <returns>
+            Once the action is completed it redirects the user
+            to the home page. 
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.HomeController.AdminLogout">
+            <summary>
+            Method handles admins' request to log out by setting several,
+            including loggedIn, to either false or empy.
+            </summary>
+            <returns>
+            Once the action is completed it redirects the user
+            to the home page. 
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.HomeController.LoginUser(Race_boat_app.Models.Login)">
+            <summary>
+            Method handles logging in a user.
+            </summary>
+            <param name="login">
+            An object that contains the user's login information.
+            </param>
+            <returns>
+            Once the action is completed it redirects the user
+            to the home page. 
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.HomeController.GetUserAsync(System.String)">
+            <summary>
+            Handels communicating with the API to get a specific User.
+            </summary>
+            <param name="path">
+            The location of the user that should be retrieved.
+            </param>
+            <returns>
+            Returns the user that was retrieved from the API.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.HomeController.AdminLogin(Race_boat_app.Models.Login)">
+            <summary>
+            Method handles logging in a admin.
+            </summary>
+            <param name="login">
+            An object that contains the admin's login information.
+            </param>
+            <returns>
+            Once the action is completed it redirects the user
+            to the home page. 
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.HomeController.GetAdminAsync(System.String)">
+            <summary>
+            Handels communicating with the API to get a specific Admin.
+            </summary>
+            <param name="path">
+            The location of the Admin that should be retrieved.
+            </param>
+            <returns>
+            Returns the Admin that was retrieved from the API.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.HomeController.Error">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Race_boat_app.Controllers.TeamController">
+            <summary>
+            Controller manages user requests in regards to teams
+            and gathers information from the API regarding teams.
+            </summary>
+        </member>
+        <member name="M:Race_boat_app.Controllers.TeamController.All">
+            <summary>
+            Gathers all teams from the API and sends them to the Teams
+            view to display a list of all teams registered with
+            the API.
+            </summary>
+            <returns>
+            Attempts to return the teams view displaying all teams
+            registered with the API.
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.TeamController.JoinTeam(Race_boat_app.Models.Join)">
+            <summary>
+            This method handels a users request to join a team.
+            </summary>
+            <param name="join">
+            This object contains the teams ID
+            </param>
+            <returns>
+            Whether successful or not at joining the team the user
+            is redirected to the teams view page.
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.TeamController.CreateTeam">
+            <summary>
+            This method handels a users request to create a team.
+            </summary>
+            <returns>
+            Whether successful or not at creating a team the user
+            is redirected to the teams view page.
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.TeamController.DisplayTeam(Race_boat_app.Models.Join)">
+            <summary>
+            This method handels creating a view for displaying a teams
+            information.
+            </summary>
+            <param name="join">
+            This object contains the teams ID
+            </param>
+            <returns>
+            If successful it will gather the captains information and if 
+            possible the boat and pit's information as well. This is given to
+            the team view page to be displayed to the user.
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.TeamController.UpdateUser">
+            <summary>
+            This method will attempt to update the user with new information
+            in this context it is their team information.
+            </summary>
+            <returns>
+            If successful it will return a decrypted user.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.TeamController.GetBoatsAsync(System.String)">
+            <summary>
+            Handels communicating with the API to get a specific Boat.
+            </summary>
+            <param name="path">
+            The location of the boat that should be retrieved.
+            </param>
+            <returns>
+            Returns the boat that was retrieved from the API.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.TeamController.UpdateTeamAsync(Race_boat_app.Models.Team)">
+            <summary>
+            Handels communicating with the API to update the information of 
+            a specific team
+            </summary>
+            <param name="team">
+            An object containing the information to be passed to the API
+            </param>
+            <returns>
+            Will return the status code of the APIs response, should be 420 No Content  
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.TeamController.DecryptUser(Race_boat_app.Models.User)">
+            <summary>
+            This method handels decrypting a user so the required information
+            can be displayed. 
+            </summary>
+            <param name="user">
+            The user information that needs to be decrypted.
+            </param>
+            <returns>
+            A decrypted user.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.TeamController.UpdateUserAsync(Race_boat_app.Models.User)">
+            <summary>
+            Handels communicating with the API to update the information of 
+            a specific user
+            </summary>
+            <param name="user">
+            An object containing the information to be passed to the API
+            </param>
+            <returns>
+            Will return the status code of the APIs response, should be 420 No Content  
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.TeamController.CreateTeamAsync(Race_boat_app.Models.Team)">
+            <summary>
+            Handels communicating with the API to create a Team.
+            </summary>
+            <param name="team">
+            An object containing the information to be passed to the API.
+            </param>
+            <returns>
+            Returns the location in the API of the newly created Team. 
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.TeamController.GetTeamsAsync(System.String)">
+            <summary>
+            Handels communicating with the API to retrieve all teams currently stored in the database
+            </summary>
+            <param name="path">
+            The location of the teams that should be retrieved
+            </param>
+            <returns>
+            Returns all the teams that were retrieved from the API
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.TeamController.GetUserAsync(System.String)">
+            <summary>
+            Handels communicating with the API to get a specific User.
+            </summary>
+            <param name="path">
+            The location of the user that should be retrieved.
+            </param>
+            <returns>
+            Returns the user that was retrieved from the API.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.TeamController.GetTeamAsync(System.String)">
+            <summary>
+            Handels communicating with the API to get a specific Team.
+            </summary>
+            <param name="path">
+            The location of the team that should be retrieved.
+            </param>
+            <returns>
+            Returns the team that was retrieved from the API.
+            </returns>
+        </member>
+        <member name="T:Race_boat_app.Controllers.UserController">
+            <summary>
+            Controller manages user requests in regards to users
+            and gathers information from the API regarding users.
+            </summary>
+        </member>
+        <member name="M:Race_boat_app.Controllers.UserController.All">
+            <summary>
+            Gathers all users from the API and sends them to the users
+            view page to display a list of all users registered with
+            the API.
+            </summary>
+            <returns>
+            Attempts to return the users view displaying all users
+            registered with the API.
+            Should anything go wrong it will send the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.UserController.Register">
+            <summary>
+            When the user makes a reuest to register 
+            this method will be triggered and
+            display the registration form.
+            </summary>
+            <returns>
+            Returns the user registration form.
+            If the user is logged in it will
+            redirect them to the index page.
+            Should anything go wrong it will send 
+            the user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.UserController.Profile">
+            <summary>
+            When the user makes a reuest to view their 
+            profile this method will be triggered and
+            display the users profile page if they are logged
+            in.
+            </summary>
+            <returns>
+            Returns the user profile page.
+            If not logged in it will redirect to
+            the home page.
+            Should anything go wrong it will send the 
+            user to the Error page.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.UserController.UpdateUser(Race_boat_app.Models.User)">
+            <summary>
+            When the user requests an update to their profile
+            this action is triggered which will pass the
+            data onto the API.
+            </summary>
+            <param name="user">
+            The object contains the updated information to
+            be passed onto the API.
+            </param>
+            <returns>
+            
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.UserController.RegisterUser(Race_boat_app.Models.User)">
+            <summary>
+            This action handels the users request to register
+            it will pass the given information onto the
+            API for storage.
+            </summary>
+            <param name="user">
+            The object containing the information to be passed to the
+            API.
+            </param>
+            <returns>
+            
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.UserController.DecryptUser(Race_boat_app.Models.User)">
+            <summary>
+            This method handels decrypting a user so the required information
+            can be displayed. 
+            </summary>
+            <param name="user">
+            The user information that needs to be decrypted.
+            </param>
+            <returns>
+            A decrypted user.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.UserController.UpdateUserAsync(Race_boat_app.Models.User)">
+            <summary>
+            Handels communicating with the API to update the information of 
+            a specific user
+            </summary>
+            <param name="user">
+            An object containing the information to be passed to the API
+            </param>
+            <returns>
+            Will return the status code of the APIs response, should be 420 No Content  
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.UserController.GetUserAsync(System.String)">
+            <summary>
+            Handels communicating with the API to get a specific User.
+            </summary>
+            <param name="path">
+            The location of the user that should be retrieved.
+            </param>
+            <returns>
+            Returns the user that was retrieved from the API.
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.UserController.CreateUserAsync(Race_boat_app.Models.User)">
+            <summary>
+            Handels communicating with the API to create a User.
+            </summary>
+            <param name="crypto">
+            An object containing the encrypted information to be passed to the API.
+            </param>
+            <returns>
+            Returns the location in the API of the newly created User. 
+            </returns>
+        </member>
+        <member name="M:Race_boat_app.Controllers.UserController.GetUsersAsync(System.String)">
+            <summary>
+            Handels communicating with the API to retrieve all users currently stored in the database
+            </summary>
+            <param name="path">
+            The location of the users that should be retrieved
+            </param>
+            <returns>
+            Returns all the users that were retrieved from the API
+            </returns>
+        </member>
+    </members>
+</doc>

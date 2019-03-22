@@ -26,6 +26,7 @@
                     //console.log("result",result);
                     $.each(result, function (i, data) {
                         console.log(data.id)
+                        console.log(data)
                         events.push(
                             {
                                 id: data.id,

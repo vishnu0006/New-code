@@ -5,15 +5,14 @@
     var users = ViewData["users"] as List<User>;
     var recruiting = ViewData["recruiting"] as List<string>;
 }
-
 <div class="container">
     <div class="row">
         @*<div class="jumbotron jumbotron-fluid">
-            <div class="container">
-                <h1 class="display-4">Fluid jumbotron</h1>
-                <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-            </div>
-        </div>*@
+                <div class="container">
+                    <h1 class="display-4">Fluid jumbotron</h1>
+                    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                </div>
+            </div>*@
         <div class="heading-title text-center">
             <h3 class="text-uppercase">Team List</h3>
             @if (@Context.Session.GetString("_Posistion") == "Captain" && Context.Session.GetString("_LoggedIn") == "true" && Context.Session.GetString("_Team") == "null")
@@ -51,7 +50,7 @@
                                         </div>
                                         <div class="col-lg-3" style="padding: 20px 15px">
                                             @if (Context.Session.GetString("_LoggedIn") == "true" && Context.Session.GetString("_Team") == "null" && recruiting[i] == "true"
-                                                && Context.Session.GetString("_Posistion") == "Pit")
+                                               && Context.Session.GetString("_Posistion") == "Pit")
                                             {
 
                                                 <form action="@Url.Action("JoinTeam", "Team")">
@@ -66,15 +65,13 @@
                                                 <input value=@users[i].Id type="hidden" asp-for="Joiner" />
                                                 <button type="submit" class="btn btn-success btn-sm float-left" style="width: 100%; font-size: 1.3rem">View Team</button>
                                             </form>
-
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                             @*<div class="card-footer">
-                                <small class="text-muted">Last updated 3 mins ago</small>
-                            </div>*@
+                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                </div>*@
                         </div>
                     </div>
                 </div>
@@ -87,49 +84,47 @@
 
 
             @*<div class="col-md-3 col-sm-3">
-                <div class="team-member">
-                    <div class="team-img">
-                        <img src="https://image.freepik.com/free-photo/man-standing-with-a-black-t-shirt_1187-1045.jpg" alt="team member" class="img-responsive">
-                    </div>
-                    <div class="team-hover" style=" word-break: break-word; margin-bottom: 3em; text-align: center;">
+                    <div class="team-member">
+                        <div class="team-img">
+                            <img src="https://image.freepik.com/free-photo/man-standing-with-a-black-t-shirt_1187-1045.jpg" alt="team member" class="img-responsive">
+                        </div>
+                        <div class="team-hover" style=" word-break: break-word; margin-bottom: 3em; text-align: center;">
 
-                        <h4>Captain @users[i].FirstName</h4>
-                        <p>Email: @users[i].Email</p>
-                        <p>Phone: @users[i].MobilePhoneNumber</p>
-                        <p>Points: @users[i].Points</p>
-                        @if (Context.Session.GetString("_LoggedIn") == "true" && Context.Session.GetString("_Team") == users[i].Team)
-                        {
-                            <p>Your Team</p>
-                        }
-                    </div>
-                    <div class="s-link">
-                        @if (Context.Session.GetString("_LoggedIn") == "true" && Context.Session.GetString("_Team") == "null" && recruiting[i] == "true"
-                       && Context.Session.GetString("_Posistion") == "Pit")
-                        {
+                            <h4>Captain @users[i].FirstName</h4>
+                            <p>Email: @users[i].Email</p>
+                            <p>Phone: @users[i].MobilePhoneNumber</p>
+                            <p>Points: @users[i].Points</p>
+                            @if (Context.Session.GetString("_LoggedIn") == "true" && Context.Session.GetString("_Team") == users[i].Team)
+                            {
+                                <p>Your Team</p>
+                            }
+                        </div>
+                        <div class="s-link">
+                            @if (Context.Session.GetString("_LoggedIn") == "true" && Context.Session.GetString("_Team") == "null" && recruiting[i] == "true"
+                           && Context.Session.GetString("_Posistion") == "Pit")
+                            {
 
-                            <form action="@Url.Action("JoinTeam", "Team")">
+                                <form action="@Url.Action("JoinTeam", "Team")">
+                                    <input value=@users[i].Team type="hidden" asp-for="TeamID" />
+                                    <input value=@users[i].Id type="hidden" asp-for="Joiner" />
+                                    <button type="submit" class="btn btn-success btn-sm float-left">Join Team</button>
+                                </form>
+
+                            }
+                            <form action="@Url.Action("DisplayTeam", "Team")">
                                 <input value=@users[i].Team type="hidden" asp-for="TeamID" />
                                 <input value=@users[i].Id type="hidden" asp-for="Joiner" />
-                                <button type="submit" class="btn btn-success btn-sm float-left">Join Team</button>
+                                <button type="submit" class="btn btn-success btn-sm float-left">View Team</button>
                             </form>
 
-                        }
-                        <form action="@Url.Action("DisplayTeam", "Team")">
-                            <input value=@users[i].Team type="hidden" asp-for="TeamID" />
-                            <input value=@users[i].Id type="hidden" asp-for="Joiner" />
-                            <button type="submit" class="btn btn-success btn-sm float-left">View Team</button>
-                        </form>
-
+                        </div>
                     </div>
-                </div>
-            </div>*@
+                </div>*@
             @*<div class="team-title">
-                <h5>Martin Smith</h5>
-                <span>founder &amp; ceo</span>
-            </div>*@
+                    <h5>Martin Smith</h5>
+                    <span>founder &amp; ceo</span>
+                </div>*@
 
         }
-
     </div>
 </div>
-

@@ -34,9 +34,6 @@
                             <h3 class="mb-0">Login</h3>
                         </div>
                         <div class="card-body">
-                            <p>@maxDate</p>
-                            <p>@maxDayS</p>
-                            <p>@maxMonthS</p>
                             <form class="form" method="post" action="@Url.Action("RegisterUser", "User")">
                                 FirstName: <input class="form-control form-control-lg rounded-0" asp-for="FirstName" required/>
                                 LastName: <input class="form-control form-control-lg rounded-0" asp-for="LastName" required/>
@@ -54,8 +51,8 @@
                                 Confirm Password: <input class="form-control form-control-lg rounded-0" type="password" value="" required/>
                                 Phonenumber: <input class="form-control form-control-lg rounded-0" asp-for="PhoneNumber" required/>
                                 Mobile: <input class="form-control form-control-lg rounded-0" asp-for="MobilePhoneNumber" />
-                                Team: <input class="form-control form-control-lg rounded-0" type="hidden" value="null" asp-for="Team" required/>
-                                Points: <input class="form-control form-control-lg rounded-0" type="hidden" value="0" asp-for="Points" required/>
+                                <input class="form-control form-control-lg rounded-0" type="hidden" value="null" asp-for="Team" required/>
+                                <input class="form-control form-control-lg rounded-0" type="hidden" value="0" asp-for="Points" required/>
                                 <button type="submit" class="btn btn-success btn-lg float-right" id="submitAll">Submit</button>
                             </form>
                         </div>

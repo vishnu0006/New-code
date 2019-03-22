@@ -17,6 +17,8 @@
                         <div class="card-body">
                             @if (Context.Session.GetString("_Admin") == "true")
                             {
+                                //Jquery code courtesy of https://code.msdn.microsoft.com/Uploading-and-Downloading-7b5277ef
+
                                 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
                                 <script>
                                     $(document).ready(function () {
@@ -39,12 +41,13 @@
                                             });
                                             ajaxRequest.done(function (xhr, textStatus) {
                                                 console.log("Here2")
+                                                window.location.href = "https://localhost:44374/Event/All";
                                                 // Do other operation
                                             });
                                         });
                                     });
                                 </script>
-                                <input class="form-control form-control-lg rounded-0" type="file" name="FileUpload1" id="fileUpload" required /><br />
+                                <input class="form-control form-control-lg rounded-0" type="file" name="FileUpload1" id="fileUpload" /><br />
                                 <input class="btn btn-success btn-lg float-right" id="btnUploadFile" type="button" value="Upload File" />
                             }
                             @if (Context.Session.GetString("_Admin") == "false")

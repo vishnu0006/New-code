@@ -22,79 +22,46 @@
     <div class="row">
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="card rounded-0">
-                                <div class="card-header">
-                                    <h3>Captain</h3>
-                                </div>
-                                <div class="card-body">
-                                    <p><span class="subtitles">Name: </span>@captain.FirstName</p>
-                                    <p><span class="subtitles">Email: </span>@captain.Email</p>
-                                    <p><span class="subtitles">Phone: </span>@captain.MobilePhoneNumber</p>
-                                    <p><span class="subtitles">Points: </span>@captain.Points</p>
-                                </div>
-                                <!--/card-block-->
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card rounded-0">
-                                <div class="card-header">
-                                    <h4>Boat</h4>
-                                </div>
-                                <div class="card-body">
-                                    @if (hasBoat == "true")
-                                    {
-                                        <p><span class="subtitles">Beam : </span>@boat.Beam</p>
-                                        <p><span class="subtitles">Type : </span>@boat.Type</p>
-                                        <p><span class="subtitles">Drive System: </span>@boat.DriveSystem</p>
-                                        <p><span class="subtitles">Hull Height : </span>@boat.HullHeight</p>
-                                        <p><span class="subtitles">Hull Material: </span>@boat.HullMaterial</p>
-                                        <p><span class="subtitles">Length: </span>@boat.Length</p>
-                                        <p><span class="subtitles">Motor Size: </span>@boat.MotorSize</p>
-                                        <p><span class="subtitles">Propeller Size: </span>@boat.PropellerSize</p>
-                                        <p><span class="subtitles">Radio: </span>@boat.Radio</p>
-                                        <p><span class="subtitles">Scale: </span>@boat.Scale</p>
-                                        <p><span class="subtitles">Speed: </span>@boat.Speed</p>
-                                        <p><span class="subtitles">Speed Control: </span>@boat.SpeedControl</p>
-                                        <p><span class="subtitles">Steering: </span>@boat.Steering</p>
-                                        <p><span class="subtitles">Colors: </span>@boat.Coluors</p>
-                                        <p><span class="subtitles">Weight: </span>@boat.Weight</p>
-                                    }
-                                    else
-                                    {
-                                        <h4>No boat is registered</h4>
-                                    }
-                                </div>
-                                <!--/card-block-->
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card rounded-0">
-                                <div class="card-header">
-                                    <h4>Pit</h4>
-                                </div>
-                                <div class="card-body">
-                                    @if (hasPit == "true")
-                                    {
-                                        <p><span class="subtitles">Pit: </span>@pit.FirstName</p>
-                                        <p><span class="subtitles">Email: </span>@pit.Email</p>
-                                        <p><span class="subtitles">Phone: </span>@pit.MobilePhoneNumber</p>
-                                        <p><span class="subtitles">Points: </span>@pit.Points</p>
-                                    }
-                                    else
-                                    {
-                                        <p>No Pit Member</p>
-                                    }
-                                </div>
-                                <!--/card-block-->
-                            </div>
-                        </div>
-                    </div>
-                    
+                <div class="col-md-6 mx-auto">
                     <!-- form card login -->
-                    
+                    <div class="card rounded-0">
+                        <div class="card-header">
+                        </div>
+                        <div class="card-body">
+                            <h4>Captain @captain.FirstName</h4>
+                            <p>Email: @captain.Email</p>
+                            <p>Phone: @captain.MobilePhoneNumber</p>
+                            <p>Points: @captain.Points</p>
+                            @if (hasBoat == "true")
+                            {
+                                <h4>Boat</h4>
+                                <p>@boat.Beam</p>
+                                <p>@boat.Type</p>
+                                <p>@boat.DriveSystem</p>
+                                <p>@boat.HullHeight</p>
+                                <p>@boat.HullMaterial</p>
+                                <p>@boat.Length</p>
+                                <p>@boat.MotorSize</p>
+                                <p>@boat.PropellerSize</p>
+                                <p>@boat.Radio</p>
+                                <p>@boat.Scale</p>
+                                <p>@boat.Speed</p>
+                                <p>@boat.SpeedControl</p>
+                                <p>@boat.Steering</p>
+                                <p>@boat.Coluors</p>
+                                <p>@boat.Weight</p>
+                                <p>@boat.SpeedControl</p>
+                            }
+                            @if (hasPit == "true")
+                            {
+                                <h4>Pit @pit.FirstName</h4>
+                                <p>Email: @pit.Email</p>
+                                <p>Phone: @pit.MobilePhoneNumber</p>
+                                <p>Points: @pit.Points</p>
+                            }
+                        </div>
+                        <!--/card-block-->
+                    </div>
                     <!-- /form card login -->
                 </div>
             </div>
