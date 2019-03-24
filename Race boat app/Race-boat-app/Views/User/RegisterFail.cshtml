@@ -1,0 +1,111 @@
+﻿@model User
+@{
+    ViewData["Title"] = "Register";
+    var maxDate = DateTime.Today.Year - 18;
+    var maxMonth = DateTime.Today.Month;
+    var maxDay = DateTime.Today.Day;
+    var maxMonthS = "";
+    var maxDayS = "";
+    if (maxMonth < 10)
+    {
+        maxMonthS = "0" + maxMonth.ToString();
+    }
+    else {
+        maxMonthS = maxMonth.ToString();
+    }
+    if (maxDay < 10)
+    {
+        maxDayS = "0" + maxDay.ToString();
+    }
+    else
+    {
+        maxDayS = maxDay.ToString();
+    }
+}
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <!-- form card login -->
+                    <div class="card rounded-0">
+                        <div class="card-header">
+                            <h3 class="mb-0">Register</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="alert alert-error">
+                                <a class="close" data-dismiss="alert" href="#">x</a>
+                                That email has been taken try again.
+                            </div>
+                            <form class="form" method="post" action="@Url.Action("RegisterUser", "User")">
+                                FirstName: <input class="form-control form-control-lg rounded-0" asp-for="FirstName" required />
+                                LastName: <input class="form-control form-control-lg rounded-0" asp-for="LastName" required />
+                                Dob: <input class="form-control form-control-lg rounded-0" type="date" min="1910-01-01" max="@maxDate-@maxMonthS-@maxDayS" asp-for="DOB" required />
+                                Position: <select class="form-control form-control-lg rounded-0" asp-for="Posistion" required>
+                                    <option value="Observer">Observer</option>
+                                    <option value="Pit">Pit</option>
+                                    <option value="Captain">Captain</option>
+                                </select>
+                                Address: <input class="form-control form-control-lg rounded-0" asp-for="Address" required />
+                                Postcode: <input class="form-control form-control-lg rounded-0" asp-for="PostCode" required />
+                                City: <input class="form-control form-control-lg rounded-0" asp-for="City" required />
+                                Email: <input class="form-control form-control-lg rounded-0" type="email" asp-for="Email" required />
+                                Password: <input class="form-control form-control-lg rounded-0" id="password" onkeyup='check();' type="password" asp-for="Password" required />
+                                Confirm Password: <input class="form-control form-control-lg rounded-0" id="confirm_password" onkeyup='check();' type="password" value="" required /><span id='message'></span><br />
+                                Phonenumber: <input class="form-control form-control-lg rounded-0" asp-for="PhoneNumber" required />
+                                Mobile: <input class="form-control form-control-lg rounded-0" asp-for="MobilePhoneNumber" />
+                                <input class="form-control form-control-lg rounded-0" type="hidden" value="null" asp-for="Team" required />
+                                <input class="form-control form-control-lg rounded-0" type="hidden" value="0" asp-for="Points" required />
+                                <button type="submit" class="btn btn-success btn-lg float-right" id="submitAll" disabled>Submit</button>
+                            </form>
+                        </div>
+                        <!--/card-block-->
+                    </div>
+                    <!-- /form card login -->
+                </div>
+            </div>
+            <!--/row-->
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+    <script>
+        var check = function () {
+            if (document.getElementById('password').value ==
+                document.getElementById('confirm_password').value) {
+                document.getElementById('message').style.color = 'green';
+                document.getElementById('message').innerHTML = 'matching';
+                document.getElementById('submitAll').disabled = false;
+            } else {
+                document.getElementById('message').style.color = 'red';
+                document.getElementById('message').innerHTML = 'not matching';
+                document.getElementById('submitAll').disabled = true;
+            }
+        }
+    </script>
+</div>
+<!--/container-->
+@*@using (Html.BeginForm("RegisterUser", "User", FormMethod.Post))
+    {
+        @Html.TextBoxFor(model => model.FirstName);
+        @Html.TextBoxFor(model => model.LastName);
+        @Html.TextBoxFor(model => model.DOB);
+        @Html.TextBoxFor(model => model.Posistion);
+        @Html.TextBoxFor(model => model.Address);
+        @Html.TextBoxFor(model => model.PostCode);
+        @Html.TextBoxFor(model => model.City);
+        @Html.TextBoxFor(model => model.Email);
+        @Html.TextBoxFor(model => model.Password);
+        @Html.TextBoxFor(model => model.PhoneNumber);
+        @Html.TextBoxFor(model => model.MobilePhoneNumber);
+        @Html.TextBoxFor(model => model.Points);
+        @Html.TextBoxFor(model => model.Team);
+        <button type="submit">Subscribe</button>
+    }*@
+@*<form method="post">
+        <div asp-validation-summary="All"></div>
+        <div>Address: <input asp-for="Address" /></div>
+        <input type="Submit" />
+
+    </form>*@

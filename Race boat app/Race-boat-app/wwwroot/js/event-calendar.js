@@ -25,8 +25,8 @@
                     var events = [];
                     //console.log("result",result);
                     $.each(result, function (i, data) {
-                        console.log(data.id)
-                        console.log(data)
+                        //console.log(data.id)
+                        //console.log(data)
                         events.push(
                             {
                                 id: data.id,
@@ -65,8 +65,8 @@
             $('#RegButton').attr('name', calEvent.id);
             $('#calendarModal').modal();
             $('#RegButton').show();
-            console.log("Hello Id")
-            console.log($('#RegButton').attr("id"))
+            //console.log("Hello Id")
+            //console.log($('#RegButton').attr("id"))
             /*if ($('#RegButton').attr("id") != "RegButton" + calEvent.id) {
                 $('#RegButton').attr("id", "RegButton");
                 $('#RegButton').show();

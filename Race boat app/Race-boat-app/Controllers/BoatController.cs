@@ -19,35 +19,58 @@ namespace Race_boat_app.Controllers
     {
         static HttpClient client = new HttpClient();
         static string holding = "";
-        
 
         /// <summary>
         /// When the user makes the request to add a boat this is called.
         /// </summary>
         /// <returns>
-        /// This function returns the regerstration page for a boat
+        /// If the user does not have a boattThis function 
+        /// returns the regerstration page for a boat otherwise
+        /// it will redirect them to the ViewBoat action.
+        /// Should anything go wrong it will send the user to the Error page.
         /// </returns>
         public async Task<IActionResult> Register()
-        {
-            string CaptainID = HttpContext.Session.GetString("_ID");
-            List<Boat> boats = await GetBoatsAsync("https://localhost:44389/api/1.0/boat");
-            //Boat boatTemp = new Boat();
-            foreach (Boat boating in boats)
-            {
-                if (boating.CaptainID == CaptainID)
-                {
-                    HttpContext.Session.SetString("_HasBoat", "True");
-                }
-            }
-            if (HttpContext.Session.GetString("_HasBoat") == "True")
-            {
-                return RedirectToAction("ViewBoat");
-            }
-            else
-            {
 
-                return View("BoatRegister");
+        {
+            try
+            {
+                string CaptainID = HttpContext.Session.GetString("_ID");
+
+                List<Boat> boats = await GetBoatsAsync("https://localhost:44389/api/1.0/boat");
+
+                //Boat boatTemp = new Boat();
+
+                foreach (Boat boating in boats)
+
+                {
+                    if (boating.CaptainID == CaptainID)
+
+                    {
+                        HttpContext.Session.SetString("_HasBoat", "True");
+                    }
+
+                }
+
+                if (HttpContext.Session.GetString("_HasBoat") == "True")
+                {
+                    return RedirectToAction("ViewBoat");
+                }
+                else
+                {
+                    return View("BoatRegister");
+                }
+
             }
+            catch (Exception e)
+            {
+                string message = e.Message;
+                string stackTrace = e.StackTrace;
+                HttpContext.Session.SetString("_Error", "true");
+                HttpContext.Session.SetString("_ErrorMessage", message);
+                HttpContext.Session.SetString("_ErrorTrace", stackTrace);
+                return View("Error");
+            }
+
         }
 
         /// <summary>
@@ -190,6 +213,33 @@ namespace Race_boat_app.Controllers
                 return View("Error");
             }
         }
+
+        /// <summary>
+        /// Gets all boats the API has to be displayed. 
+        /// </summary>
+        /// <returns>
+        /// Returns the view boats which displays all the boats in the API.
+        /// Should anything go wrong it will send the user to the Error page.
+        /// </returns>
+        public async Task<IActionResult> All()
+        {
+            try
+            {
+                List<Boat> boats = await GetBoatsAsync("https://localhost:44389/api/1.0/boat");
+                return View("Boats", boats);
+            }
+            catch (Exception e)
+            {
+                string message = e.Message;
+                string stackTrace = e.StackTrace;
+                HttpContext.Session.SetString("_Error", "true");
+                HttpContext.Session.SetString("_ErrorMessage", message);
+                HttpContext.Session.SetString("_ErrorTrace", stackTrace);
+                return View("Error");
+            }
+            //return View("User");
+        }
+
         /// <summary>
         /// Handels communicating with the API to create a Boat.
         /// </summary>

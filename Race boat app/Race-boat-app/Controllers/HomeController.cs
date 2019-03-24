@@ -31,6 +31,10 @@ namespace Race_boat_app.Controllers
         {
             try
             {
+                List<EventIn> events = new EventController().AllEvents().Result;
+                
+                
+
                 HttpContext.Session.SetString("_BoatID", "Empty");
                 if (HttpContext.Session.GetString("_LoggedIn") == "true")
                 {
@@ -41,7 +45,7 @@ namespace Race_boat_app.Controllers
                     }
                     HttpContext.Session.SetString("_Admin", "false");
                     HttpContext.Session.SetString("_Error", "false");
-                    return View();
+                    return View(events);
                 }
                 else
                 {
@@ -54,7 +58,7 @@ namespace Race_boat_app.Controllers
                     HttpContext.Session.SetString("_Admin", "false");
                     HttpContext.Session.SetString("_Error", "false");
                     HttpContext.Session.SetString("_LoggedIn", "false");
-                    return View();
+                    return View(events);
                 }
             }
             catch (Exception e)
@@ -68,6 +72,10 @@ namespace Race_boat_app.Controllers
                 return View();
             }
         }
+
+        
+
+
 
         /// <summary>
         /// Method handles user request for the About us page

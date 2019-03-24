@@ -457,5 +457,21 @@ namespace Race_boat_app.Controllers
             }
             return team;
         }
+
+        /// <summary>
+        /// Handels communicating with the API to delete a specific team
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the team that is to be deleted
+        /// </param>
+        /// <returns>
+        /// Will return the status code of the APIs response, should be 420 No Content  
+        /// </returns>
+        static async Task<HttpStatusCode> DeleteTeamAsync(string id)
+        {
+            HttpResponseMessage response = await client.DeleteAsync(
+                $"https://localhost:44389/api/1.0/team/{id}");
+            return response.StatusCode;
+        }
     }
 }

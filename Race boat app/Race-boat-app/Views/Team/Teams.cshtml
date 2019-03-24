@@ -33,20 +33,27 @@
                     <div class="col-12 mt-3">
                         <div class="card">
                             <div class="card-horizontal">
-                                <div class="img-square-wrapper">
-                                    <img class="" style="max-width: 15vw" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="Card image cap">
-                                </div>
+                                
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-lg-9">
-                                            <h4>Captain @users[i].FirstName</h4>
-                                            <p><span class="subtitles">Email:</span> @users[i].Email</p>
-                                            <p><span class="subtitles">Phone:</span> @users[i].MobilePhoneNumber</p>
-                                            <p><span class="subtitles">Points:</span> @users[i].Points</p>
-                                            @if (Context.Session.GetString("_LoggedIn") == "true" && Context.Session.GetString("_Team") == users[i].Team)
-                                            {
-                                                <p>Your Team</p>
-                                            }
+                                            <div class="row">
+                                                <div class="img-square-wrapper col-3">
+                                                    <img class="" style="max-width: 14vw" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="Card image cap">
+                                                </div>
+                                                <div class="col-9">
+                                                    <h4>Captain @users[i].FirstName</h4>
+                                                    <p><span class="subtitles">Email:</span> @users[i].Email</p>
+                                                    <p><span class="subtitles">Phone:</span> @users[i].MobilePhoneNumber</p>
+                                                    <p><span class="subtitles">Points:</span> @users[i].Points</p>
+                                                    @if (Context.Session.GetString("_LoggedIn") == "true" && Context.Session.GetString("_Team") == users[i].Team)
+                                                    {
+                                                        <p>Your Team</p>
+                                                    }
+                                                </div>
+                                            </div>
+                                            
+                                            
                                         </div>
                                         <div class="col-lg-3" style="padding: 20px 15px">
                                             @if (Context.Session.GetString("_LoggedIn") == "true" && Context.Session.GetString("_Team") == "null" && recruiting[i] == "true"
@@ -63,7 +70,7 @@
                                             <form action="@Url.Action("DisplayTeam", "Team")">
                                                 <input value=@users[i].Team type="hidden" asp-for="TeamID" />
                                                 <input value=@users[i].Id type="hidden" asp-for="Joiner" />
-                                                <button type="submit" class="btn btn-success btn-sm float-left" style="width: 100%; font-size: 1.3rem">View Team</button>
+                                                <button type="submit" class="btn btn-success btn-sm float-left" style="width: 100%; font-size: 1.3rem; margin-top: 15px;">View Team</button>
                                             </form>
                                         </div>
                                     </div>

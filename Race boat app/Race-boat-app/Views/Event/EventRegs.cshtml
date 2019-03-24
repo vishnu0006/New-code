@@ -1,0 +1,72 @@
+﻿@using Microsoft.AspNetCore.Http
+    @{
+        ViewData["Title"] = "EventRegs";
+        var users = ViewData.Model;
+    }
+
+    @*<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#submitAll').on('click', function () {
+                    var data = $("form").serialize();
+                    console.log(data);
+                    // Make Ajax request with the contentType = false, and procesDate = false
+                    var ajaxRequest = $.ajax({
+                        type: "POST",
+                        url: "Index2",
+                        contentType: false,
+                        processData: false,
+                        data: data
+                    });
+                    ajaxRequest.done(function (xhr, textStatus) {
+                        // Do other operation
+                    });
+                });
+            });
+        </script>*@
+
+
+
+
+    @*<table>
+
+            @foreach (var user in users)
+            {
+                <tr>
+                    <td>@user.FirstName</td>
+
+                </tr>
+            }
+        </table>*@
+
+
+    <div class="container">
+        <div class="row">
+            @foreach (var user in users)
+            {
+                <div class="col-sm-4">
+                    <div class="card user-card">
+                        <img class="card-img-top" src="~/images/profile.jpg" alt="Card image cap">
+                        <div class="card-body user-card-body text-center">
+                            @if (Context.Session.GetString("_Admin") == "true")
+                            {
+                                    <p class="card-text">
+                                        <span>ID: @user.Id</span><br />
+                                        <span>Team: @user.TeamID</span><br />
+                                        <span>Event: @user.EventID</span><br />
+                                        
+                                    </p>
+                            }
+                        @if (Context.Session.GetString("_Admin") == "false")
+                        {
+                            
+                                <p>You Don't have permision to access this</p>
+                            
+                        }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+

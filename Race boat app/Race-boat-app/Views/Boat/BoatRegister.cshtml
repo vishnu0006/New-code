@@ -1,6 +1,5 @@
 ﻿@model Boat
 @using Microsoft.AspNetCore.Http
-@using Microsoft.AspNetCore.Http
 @{
     ViewData["Title"] = "BoatRegister";
 }
@@ -22,20 +21,20 @@
                                 <form class="form" method="post" action="@Url.Action("RegisterBoat", "Boat")">
                                     Beam: <input class="form-control form-control-lg rounded-0" type="number" asp-for="Beam" required />
                                     Beam Measurement: <select class="form-control form-control-lg rounded-0" asp-for="BeamM" required>
-                                        <option value="in">in</option>
+                                        <option selected="selected" value="in">in</option>
                                         <option value="cm">cm</option>
                                     </select>
                                     Type: <input class="form-control form-control-lg rounded-0" asp-for="Type" required />
                                     Drive System: <input class="form-control form-control-lg rounded-0" asp-for="DriveSystem" required />
                                     Hull Height: <input class="form-control form-control-lg rounded-0" type="number" asp-for="HullHeight" required />
                                     Hull Height Measurement: <select class="form-control form-control-lg rounded-0" asp-for="HullHeightM" required>
-                                        <option value="in">in</option>
+                                        <option selected="selected" value="in">in</option>
                                         <option value="cm">cm</option>
                                     </select>
                                     Hull Material: <input class="form-control form-control-lg rounded-0" asp-for="HullMaterial" required />
                                     Length: <input class="form-control form-control-lg rounded-0" type="number" asp-for="Length" required />
                                     Length Measurement: <select class="form-control form-control-lg rounded-0" asp-for="HullHeightM" required>
-                                        <option value="in">in</option>
+                                        <option selected="selected" value="in">in</option>
                                         <option value="cm">cm</option>
                                     </select>
                                     Motor Size: <input class="form-control form-control-lg rounded-0" asp-for="MotorSize" required />
@@ -43,12 +42,12 @@
                                     Radio: <input class="form-control form-control-lg rounded-0" asp-for="Radio" required />
                                     Scale: <input class="form-control form-control-lg rounded-0" type="number" asp-for="Scale" required />
                                     Scale Measurement: <select class="form-control form-control-lg rounded-0" asp-for="ScaleM" required>
-                                        <option value="in">in</option>
+                                        <option selected="selected" value="in">in</option>
                                         <option value="cm">cm</option>
                                     </select>
                                     Speed: <input class="form-control form-control-lg rounded-0" type="number" asp-for="Speed" required />
                                     Speed Measurement: <select class="form-control form-control-lg rounded-0" asp-for="SpeedM" required>
-                                        <option value="mph">mph</option>
+                                        <option selected="selected" value="mph">mph</option>
                                         <option value="kph">kph</option>
                                     </select>
                                     Speed Control: <input class="form-control form-control-lg rounded-0" asp-for="SpeedControl" required />
@@ -56,7 +55,7 @@
                                     Coluors: <input class="form-control form-control-lg rounded-0" asp-for="Coluors" required />
                                     Weight: <input class="form-control form-control-lg rounded-0" type="number" asp-for="Weight" required />
                                     Weight Measurement: <select class="form-control form-control-lg rounded-0" asp-for="WeightM" required>
-                                        <option value="lb">lb</option>
+                                        <option selected="selected" value="lb">lb</option>
                                         <option value="kg">kg</option>
                                     </select>
                                     <button type="submit" class="btn btn-success btn-lg float-right" id="submitAll">Submit</button>

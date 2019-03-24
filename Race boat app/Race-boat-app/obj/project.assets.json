@@ -13061,11 +13061,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\2203 boat app\\RCBR_Front_End-master\\Race-boat-app\\Race-boat-app.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\2303 boat app\\RCBR_Front_End-master\\Race-boat-app\\Race-boat-app.csproj",
       "projectName": "Race-boat-app",
-      "projectPath": "C:\\Users\\user\\Desktop\\2203 boat app\\RCBR_Front_End-master\\Race-boat-app\\Race-boat-app.csproj",
+      "projectPath": "C:\\Users\\user\\Desktop\\2303 boat app\\RCBR_Front_End-master\\Race-boat-app\\Race-boat-app.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\Desktop\\2203 boat app\\RCBR_Front_End-master\\Race-boat-app\\obj\\",
+      "outputPath": "C:\\Users\\user\\Desktop\\2303 boat app\\RCBR_Front_End-master\\Race-boat-app\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

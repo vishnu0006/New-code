@@ -6,8 +6,13 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
+//Taken and altered from https://stackoverflow.com/questions/10168240/encrypting-decrypting-a-string-in-c-sharp
 namespace Race_boat_app.Models
 {
+    /// <summary>
+    /// This class handels performing encryption and
+    /// decryption operations for the Front End
+    /// </summary>
     public class Crypto
     {
         // This constant is used to determine the keysize of the encryption algorithm in bits.
@@ -17,6 +22,19 @@ namespace Race_boat_app.Models
         // This constant determines the number of iterations for the password bytes generation function.
         private const int DerivationIterations = 10000;
 
+        /// <summary>
+        /// This action performs the encryption operation on
+        /// the data being passed to it.
+        /// </summary>
+        /// <param name="plainText">
+        /// The data being passed to be encrypted.
+        /// </param>
+        /// <param name="passPhrase">
+        /// The key that will be used to encrypt the data
+        /// </param>
+        /// <returns>
+        /// It returns an encrypted string of the data passed in.
+        /// </returns>
         public static string Encrypt(string plainText, string passPhrase)
         {
             // Salt and IV is randomly generated each time, but is preprended to encrypted cipher text
@@ -54,6 +72,19 @@ namespace Race_boat_app.Models
             }
         }
 
+        /// <summary>
+        /// This acrtion handels the decryption of a piece of 
+        /// data.
+        /// </summary>
+        /// <param name="cipherText">
+        /// The encrypted data to be decrypted
+        /// </param>
+        /// <param name="passPhrase">
+        /// The key that will decrypt the data.
+        /// </param>
+        /// <returns>
+        /// A decrypted version of the data passed in.
+        /// </returns>
         public static string Decrypt(string cipherText, string passPhrase)
         {
             // Get the complete stream of bytes that represent:

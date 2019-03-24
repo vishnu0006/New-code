@@ -28,70 +28,70 @@
 
 @if (Context.Session.GetString("_LoggedIn") == "true")
 {
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    <div class="col-md-6 mx-auto">
-                        <!-- form card login -->
-                        <div class="card rounded-0">
-                            <div class="card-header">
-                                <h3 class="mb-0">@Context.Session.GetString("_Name")'s Profile</h3>
-                            </div>
-                            <div class="card-body">
-                                <form class="form" method="post" action="@Url.Action("UpdateUser", "User")">
-                                    ID: <input class="form-control form-control-lg rounded-0" disabled value=@Context.Session.GetString("_ID") required />
-                                    FirstName: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_Name") asp-for="FirstName" required />
-                                    LastName: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_LastName") asp-for="LastName" required />
-                                    <!--Dob: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_DOB") asp-for="DOB" required />
-    Position: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_Posistion") asp-for="Posistion" required />-->
-                                    Dob: <input class="form-control form-control-lg rounded-0" type="date" value=@Context.Session.GetString("_DOB") min="1910-01-01" max="@maxDate-@maxMonthS-@maxDayS" asp-for="DOB" required />
-                                    Position:
-
-                                        <select class="form-control form-control-lg rounded-0" asp-for="Posistion" required disabled>
-                                            <option value=@Context.Session.GetString("_Posistion") selected disabled hidden>@Context.Session.GetString("_Posistion")</option>
-                                            <option value="Observer">Observer</option>
-                                            <option value="Pit">Pit</option>
-                                            <option value="Captain">Captain</option>
-                                        </select>
-                                    
-                                    <!--@if (Context.Session.GetString("_Team") != "null")
-                                    {
-                                        <select class="form-control form-control-lg rounded-0" asp-for="Posistion" required disabled>
-                                            <option value=@Context.Session.GetString("_Posistion") selected disabled hidden>@Context.Session.GetString("_Posistion")</option>
-                                            <option value="Observer">Observer</option>
-                                            <option value="Pit">Pit</option>
-                                            <option value="Captain">Captain</option>
-                                        </select>
-                                    }-->
-                                    Address: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_Address") asp-for="Address" required />
-                                    Postcode: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_PostCode") asp-for="PostCode" required />
-                                    City: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_City") asp-for="City" required />
-                                    Email: <input class="form-control form-control-lg rounded-0" type="email" value=@Context.Session.GetString("_Email") asp-for="Email" disabled required />
-                                    Phonenumber: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_PhoneNumber") asp-for="PhoneNumber" required />
-                                    Mobile: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_MobileNumber") asp-for="MobilePhoneNumber" required />
-                                    Team: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_Team") asp-for="Team" disabled required />
-                                    Points: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_Points") asp-for="Points" disabled required />
-                                    <button type="submit" class="btn btn-success btn-lg float-right" id="submitAll">Update</button>
-                                </form>
-                                @if (@Context.Session.GetString("_Posistion") == "Captain")
-                                {
-                                    <form action="@Url.Action("Register", "Boat")">
-                                        <button type="submit" class="btn btn-success btn-lg float-left">View Boat</button>
-                                    </form>
-                                }
-                            </div>
-                            <!--/card-block-->
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <!-- form card login -->
+                    <div class="card rounded-0">
+                        <div class="card-header">
+                            <h3 class="mb-0">@Context.Session.GetString("_Name")'s Profile</h3>
                         </div>
-                        <!-- /form card login -->
+                        <div class="card-body">
+                            <form class="form" method="post" action="@Url.Action("UpdateUser", "User")">
+                                ID: <input class="form-control form-control-lg rounded-0" disabled value=@Context.Session.GetString("_ID") required />
+                                FirstName: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_Name") asp-for="FirstName" required />
+                                LastName: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_LastName") asp-for="LastName" required />
+                                <!--Dob: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_DOB") asp-for="DOB" required />
+                                Position: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_Posistion") asp-for="Posistion" required />-->
+                                Dob: <input class="form-control form-control-lg rounded-0" type="date" value=@Context.Session.GetString("_DOB") min="1910-01-01" max="@maxDate-@maxMonthS-@maxDayS" asp-for="DOB" required />
+                                Position:
+
+                                <select class="form-control form-control-lg rounded-0" asp-for="Posistion" required disabled>
+                                    <option value=@Context.Session.GetString("_Posistion") selected disabled hidden>@Context.Session.GetString("_Posistion")</option>
+                                    <option value="Observer">Observer</option>
+                                    <option value="Pit">Pit</option>
+                                    <option value="Captain">Captain</option>
+                                </select>
+
+                                <!--@if (Context.Session.GetString("_Team") != "null")
+                                {
+                                    <select class="form-control form-control-lg rounded-0" asp-for="Posistion" required disabled>
+                                        <option value=@Context.Session.GetString("_Posistion") selected disabled hidden>@Context.Session.GetString("_Posistion")</option>
+                                        <option value="Observer">Observer</option>
+                                        <option value="Pit">Pit</option>
+                                        <option value="Captain">Captain</option>
+                                    </select>
+                                }-->
+                                Address: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_Address") asp-for="Address" required />
+                                Postcode: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_PostCode") asp-for="PostCode" required />
+                                City: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_City") asp-for="City" required />
+                                Email: <input class="form-control form-control-lg rounded-0" type="email" value=@Context.Session.GetString("_Email") asp-for="Email" disabled required />
+                                Phonenumber: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_PhoneNumber") asp-for="PhoneNumber" required />
+                                Mobile: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_MobileNumber") asp-for="MobilePhoneNumber" required />
+                                Team: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_Team") asp-for="Team" disabled required />
+                                Points: <input class="form-control form-control-lg rounded-0" value=@Context.Session.GetString("_Points") asp-for="Points" disabled required />
+                                <button type="submit" class="btn btn-success btn-lg float-right" id="submitAll">Update</button>
+                            </form>
+                            @if (@Context.Session.GetString("_Posistion") == "Captain")
+                            {
+                                <form action="@Url.Action("Register", "Boat")">
+                                    <button type="submit" class="btn btn-success btn-lg float-left">View Boat</button>
+                                </form>
+                            }
+                        </div>
+                        <!--/card-block-->
                     </div>
+                    <!-- /form card login -->
                 </div>
-                <!--/row-->
             </div>
-            <!--/col-->
+            <!--/row-->
         </div>
-        <!--/row-->
+        <!--/col-->
     </div>
+    <!--/row-->
+</div>
     <!--/container-->
     
     

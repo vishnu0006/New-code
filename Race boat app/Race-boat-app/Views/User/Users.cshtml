@@ -1,43 +1,44 @@
-﻿
-@{
-    ViewData["Title"] = "User";
-    var users = ViewData.Model;
-}
+﻿@using Microsoft.AspNetCore.Http
 
-@*<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#submitAll').on('click', function () {
-                var data = $("form").serialize();
-                console.log(data);
-                // Make Ajax request with the contentType = false, and procesDate = false
-                var ajaxRequest = $.ajax({
-                    type: "POST",
-                    url: "Index2",
-                    contentType: false,
-                    processData: false,
-                    data: data
-                });
-                ajaxRequest.done(function (xhr, textStatus) {
-                    // Do other operation
+    @{
+        ViewData["Title"] = "User";
+        var users = ViewData.Model;
+    }
+
+    @*<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#submitAll').on('click', function () {
+                    var data = $("form").serialize();
+                    console.log(data);
+                    // Make Ajax request with the contentType = false, and procesDate = false
+                    var ajaxRequest = $.ajax({
+                        type: "POST",
+                        url: "Index2",
+                        contentType: false,
+                        processData: false,
+                        data: data
+                    });
+                    ajaxRequest.done(function (xhr, textStatus) {
+                        // Do other operation
+                    });
                 });
             });
-        });
-    </script>*@
+        </script>*@
 
 
 
 
-@*<table>
+    @*<table>
 
-    @foreach (var user in users)
-    {
-        <tr>
-            <td>@user.FirstName</td>
+            @foreach (var user in users)
+            {
+                <tr>
+                    <td>@user.FirstName</td>
 
-        </tr>
-    }
-</table>*@
+                </tr>
+            }
+        </table>*@
 
 
     <div class="container">
@@ -48,27 +49,36 @@
                     <div class="card user-card">
                         <img class="card-img-top" src="~/images/profile.jpg" alt="Card image cap">
                         <div class="card-body user-card-body text-center">
-                            <h5 class="card-title">@user.FirstName&nbsp;@user.LastName</h5>
-                            <p class="card-text">
-                                <span>@user.Email</span><br />
-                                <span>Team: @user.Team</span><br />
-                                <span>Phone: @user.PhoneNumber</span>
-                            </p>
-                            <div>
-                                <a href="#"><i class="fab fa-dribbble"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                                <a href="#"><i class="fab fa-facebook"></i></a>
-                            </div>
+                            @if (Context.Session.GetString("_Admin") == "true")
+                            {
+                                <h5 class="card-title">@user.FirstName&nbsp;@user.LastName</h5>
+                                <p class="card-text">
+                                    <span>@user.Email</span><br />
+                                    <span>Team: @user.Team</span><br />
+                                    <span>Phone: @user.PhoneNumber</span>
+                                </p>
+                                <div>
+                                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                </div>
+                                @*<a href="#" class="btn btn-primary">Contact @user.FirstName</a>*@
 
-                            @*<a href="#" class="btn btn-primary">Contact @user.FirstName</a>*@
+                                <p style="margin:0px;">
+                                    <button class="user-card-button">Contact @user.FirstName</button>
+                                </p>
+                            }
+                            @if (Context.Session.GetString("_Admin") == "false")
+                            {
+
+                                <p>You Don't have permision to access this</p>
+
+                            }
                         </div>
-                        <p style="margin:0px;">
-                            <button class="user-card-button">Contact @user.FirstName</button>
-                        </p>
                     </div>
                 </div>
             }
-            </div>
+        </div>
     </div>
 

@@ -1,0 +1,93 @@
+﻿@using Microsoft.AspNetCore.Http
+
+    @{
+        ViewData["Title"] = "Boats";
+        var users = ViewData.Model;
+    }
+
+    @*<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('#submitAll').on('click', function () {
+                    var data = $("form").serialize();
+                    console.log(data);
+                    // Make Ajax request with the contentType = false, and procesDate = false
+                    var ajaxRequest = $.ajax({
+                        type: "POST",
+                        url: "Index2",
+                        contentType: false,
+                        processData: false,
+                        data: data
+                    });
+                    ajaxRequest.done(function (xhr, textStatus) {
+                        // Do other operation
+                    });
+                });
+            });
+        </script>*@
+
+
+
+
+    @*<table>
+
+            @foreach (var user in users)
+            {
+                <tr>
+                    <td>@user.FirstName</td>
+
+                </tr>
+            }
+        </table>*@
+
+
+    <div class="container">
+        <div class="row">
+            @foreach (var user in users)
+            {
+                <div class="col-sm-4">
+                    <div class="card user-card">
+                        <img class="card-img-top" src="~/images/profile.jpg" alt="Card image cap">
+                        <div class="card-body user-card-body text-center">
+                            @if (Context.Session.GetString("_Admin") == "true")
+                            {
+                                
+                                <p class="card-text">
+                                    <span>ID: @user.Id </span><br />
+                                    <span>Beam: @user.Beam </span><br />
+                                    <span>BeamM: @user.BeamM </span><br />
+                                    <span>DriveSystem: @user.DriveSystem </span><br />
+                                    <span>HullHeight: @user.HullHeight </span><br />
+                                    <span>HullHeightM: @user.HullHeightM </span><br />
+                                    <span>HullMaterial: @user.HullMaterial </span>
+                                    <span>MotorSize: @user.MotorSize  </span><br />
+                                    <span>PropellerSize: @user.PropellerSize </span><br />
+                                    <span>Radio: @user.Radio </span>
+                                    <span>Scale: @user.Scale</span><br />
+                                    <span>ScaleM: @user.ScaleM</span><br />
+                                    <span>Speed: @user.Speed </span><br />
+                                    <span>SpeedM: @user.SpeedM </span><br />
+                                    <span>SpeedControl: @user.SpeedControl </span>
+                                    <span>Type: @user.Type </span><br />
+                                    <span>Steering: @user.Steering </span>
+                                    <span>Coluors: @user.Coluors</span>
+                                    <span>Weight: @user.Weight</span><br />
+                                    <span>WeightM: @user.WeightM</span><br />
+                                    <span>CaptainID: @user.CaptainID</span>
+
+                                </p>
+
+                            }
+                        @if (Context.Session.GetString("_Admin") == "false")
+                        {
+                            
+                                <p>You Don't have permision to access this</p>
+                            
+                        }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+

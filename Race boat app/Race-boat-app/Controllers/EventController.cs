@@ -384,8 +384,34 @@ namespace Race_boat_app.Controllers
             }
         }
 
-        public IActionResult stopRed() {
+        /*public IActionResult stopRed() {
             return RedirectToAction("All");
+        }*/
+
+        /// <summary>
+        /// Gets all event regs the API has to be displayed. 
+        /// </summary>
+        /// <returns>
+        /// Returns the view event regs which displays all the event regs.
+        /// Should anything go wrong it will send the user to the Error page.
+        /// </returns>
+        public async Task<IActionResult> EventRegAll()
+        {
+            try
+            {
+                List<EventReg> eventRegs = await GetEventRegsAsync("https://localhost:44389/api/1.0/eventReg");
+                return View("EventRegs", eventRegs);
+            }
+            catch (Exception e)
+            {
+                string message = e.Message;
+                string stackTrace = e.StackTrace;
+                HttpContext.Session.SetString("_Error", "true");
+                HttpContext.Session.SetString("_ErrorMessage", message);
+                HttpContext.Session.SetString("_ErrorTrace", stackTrace);
+                return View("Error");
+            }
+            //return View("User");
         }
 
         /// <summary>
@@ -573,6 +599,38 @@ namespace Race_boat_app.Controllers
                 eventReg = await response.Content.ReadAsAsync<List<EventReg>>();
             }
             return eventReg;
+        }
+
+        /// <summary>
+        /// Handels communicating with the API to delete a specific event
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the event that is to be deleted
+        /// </param>
+        /// <returns>
+        /// Will return the status code of the APIs response, should be 420 No Content  
+        /// </returns>
+        static async Task<HttpStatusCode> DeleteEventAsync(string id)
+        {
+            HttpResponseMessage response = await client.DeleteAsync(
+                $"https://localhost:44389/api/1.0/event/{id}");
+            return response.StatusCode;
+        }
+
+        /// <summary>
+        /// Handels communicating with the API to delete a specific event reg
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the event reg that is to be deleted
+        /// </param>
+        /// <returns>
+        /// Will return the status code of the APIs response, should be 420 No Content  
+        /// </returns>
+        static async Task<HttpStatusCode> DeleteEventRegAsync(string id)
+        {
+            HttpResponseMessage response = await client.DeleteAsync(
+                $"https://localhost:44389/api/1.0/eventReg/{id}");
+            return response.StatusCode;
         }
 
         /// <summary>
